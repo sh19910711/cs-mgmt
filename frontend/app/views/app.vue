@@ -7,8 +7,8 @@
   </div>
 </template>
 
-<script lang="babel">
-  export default {
-    props: ['name']
-  }
+<script>
+export default {
+  props: ['name']
+}
 </script>

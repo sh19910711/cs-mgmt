@@ -4,13 +4,13 @@
     color: $h1-color
 </style>
 
-<template>
-  <div class="index">
-    <h1>index</h1>
-    <p>msg: {{msg}}</p>
-    <app :name=appName></app>
-    <input type="text" v-model="appName">
-  </div>
+<template lang="pug">
+  div.index
+    h1 index
+    p msg: {{msg}}
+    input(type="text" v-model="msg")
+    app(:name="appName")
+    input(type="text" v-model="appName")
 </template>
 
 <script>
