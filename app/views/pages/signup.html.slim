@@ -1,0 +1,5 @@
+== form_for @user, action: '/api/auth/sign_up' do |f|
+  div== f.text_field :name
+  div== f.text_field :email
+  div== f.password_field :password
+  div== f.submit

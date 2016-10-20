@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  # Frontend
+  root 'pages#index'
+  devise_for :users, skip: [:sessions, :registrations]
+  devise_scope :user do
+    get '/users', to: 'pages#index'
+    get '/signin', to: 'pages#signin'
+    get '/signup', to: 'pages#signup'
+  end
+
   scope :api do
     mount_devise_token_auth_for 'User', at: 'auth'
 
