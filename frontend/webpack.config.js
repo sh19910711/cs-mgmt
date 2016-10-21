@@ -6,6 +6,7 @@ module.exports = {
   entry: './main',
   output: { path: __dirname + '/../public/js', filename: 'bundle.js' },
   resolve: {
+    root: [path.join(__dirname, 'app', 'lib')],
     alias: { 'vue': 'vue/dist/vue.js' }
   },
   module: {
