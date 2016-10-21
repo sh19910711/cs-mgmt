@@ -54,20 +54,27 @@
 
 	var _vueRouter2 = _interopRequireDefault(_vueRouter);
 
+	var _request = __webpack_require__(24);
+
+	var _request2 = _interopRequireDefault(_request);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	__webpack_require__(3);
 
 	_vue2.default.use(_vueRouter2.default);
 
-	var routes = [{ path: '/', component: __webpack_require__(7) }, { path: '/signin', component: __webpack_require__(13) }, { path: '/signup', component: __webpack_require__(18) }];
+	var routes = [{ path: '/', component: __webpack_require__(13) }, // TODO: create first page
+	{ path: '/signin', component: __webpack_require__(13) }, { path: '/signup', component: __webpack_require__(18) }];
 
 	var router = new _vueRouter2.default({
 	  mode: 'history',
 	  routes: routes
 	});
 
-	new _vue2.default({ router: router }).$mount('#app');
+	window.onload = function (_) {
+	  new _vue2.default({ router: router }).$mount('#app');
+	};
 
 /***/ },
 /* 1 */
@@ -9508,7 +9515,7 @@
 
 
 	// module
-	exports.push([module.id, ".cs-form input {\n  border: 1px solid #D4D4D4; }\n\n.cs-form button {\n  border: 1px solid #00CCFF; }\n\n.cs-page {\n  width: 100%;\n  height: 100%;\n  background: #B2D9FF; }\n", ""]);
+	exports.push([module.id, ".cs-page-background {\n  z-index: -1;\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  background: #fff; }\n\n.cs-page-content {\n  font-family: 'Source Sans Pro', sans-serif; }\n\n.cs-margin {\n  margin-top: 36px; }\n\n.cs-center {\n  margin: 0 auto; }\n\n.cs-panel {\n  padding: 18px;\n  background: #fff;\n  border: 1px solid #B2D9FF;\n  color: #555; }\n\n.cs-panel hr {\n  height: 1px;\n  background: #eee;\n  border: 0; }\n\n.cs-panel-title {\n  font-size: 24px;\n  line-height: 48px; }\n\n.cs-panel-desc {\n  font-size: 18px;\n  line-height: 36px; }\n\n.cs-panel-title, .cs-panel-desc {\n  text-align: center; }\n\n.cs-form label {\n  color: #999; }\n\n.cs-form-errors {\n  color: #c66;\n  margin-bottom: 12px; }\n\n.cs-form-control input, .cs-form-control button {\n  box-sizing: border-box;\n  width: 100%;\n  font-weight: normal;\n  height: 36px;\n  line-height: 36px;\n  padding: 0 12px;\n  margin: 12px 0; }\n\n.cs-form-control input {\n  font-size: 18px;\n  border: 1px solid #D4D4D4; }\n\n.cs-form-control button {\n  cursor: pointer;\n  font-size: 18px; }\n\n.cs-button-success {\n  background: #ce6;\n  border: 1px solid #be5;\n  color: #363; }\n\n.cs-page {\n  width: 100%;\n  height: 100%; }\n", ""]);
 
 	// exports
 
@@ -9822,93 +9829,9 @@
 
 
 /***/ },
-/* 7 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __vue_exports__, __vue_options__
-
-	/* styles */
-	__webpack_require__(8)
-
-	/* script */
-	__vue_exports__ = __webpack_require__(11)
-
-	/* template */
-	var __vue_template__ = __webpack_require__(12)
-	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
-	if (
-	  typeof __vue_exports__.default === "object" ||
-	  typeof __vue_exports__.default === "function"
-	) {
-	if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
-	__vue_options__ = __vue_exports__ = __vue_exports__.default
-	}
-	if (typeof __vue_options__ === "function") {
-	  __vue_options__ = __vue_options__.options
-	}
-	__vue_options__.__file = "/home/ubuntu/workspace/cs-mgmt/frontend/app/views/index.vue"
-	__vue_options__.render = __vue_template__.render
-	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-284f12fa"
-
-	/* hot reload */
-	if (false) {(function () {
-	  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
-	  hotAPI.install(require("vue"), false)
-	  if (!hotAPI.compatible) return
-	  module.hot.accept()
-	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-284f12fa", __vue_options__)
-	  } else {
-	    hotAPI.reload("data-v-284f12fa", __vue_options__)
-	  }
-	})()}
-	if (__vue_options__.functional) {console.error("[vue-loader] index.vue: functional components are not supported and should be defined in plain js files using render functions.")}
-
-	module.exports = __vue_exports__
-
-
-/***/ },
-/* 8 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-
-	// load the styles
-	var content = __webpack_require__(9);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(10)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-284f12fa&scoped=true!./../../node_modules/sass-loader/index.js?indentedSyntax!./../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./index.vue", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-284f12fa&scoped=true!./../../node_modules/sass-loader/index.js?indentedSyntax!./../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./index.vue");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 9 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(5)();
-	// imports
-
-
-	// module
-	exports.push([module.id, "\n", ""]);
-
-	// exports
-
-
-/***/ },
+/* 7 */,
+/* 8 */,
+/* 9 */,
 /* 10 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -10131,63 +10054,8 @@
 
 
 /***/ },
-/* 11 */
-/***/ function(module, exports) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-
-	exports.default = {
-	  name: 'index',
-	  components: {},
-	  data: function data(_) {
-	    return {};
-	  }
-	};
-
-/***/ },
-/* 12 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports={render:function (){with(this) {
-	  return _h('div', {
-	    staticClass: "cs-page"
-	  }, [_m(0), _h('ul', [_h('li', [_h('router-link', {
-	    attrs: {
-	      "to": "/signin"
-	    }
-	  }, ["Sign in"])]), _h('li', [_h('router-link', {
-	    attrs: {
-	      "to": "/signup"
-	    }
-	  }, ["Sign up"])])])])
-	}},staticRenderFns: [function (){with(this) {
-	  return _h('h1', ["index"])
-	}}]}
-	if (false) {
-	  module.hot.accept()
-	  if (module.hot.data) {
-	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-284f12fa", module.exports)
-	  }
-	}
-
-/***/ },
+/* 11 */,
+/* 12 */,
 /* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -10269,14 +10137,14 @@
 
 
 	// module
-	exports.push([module.id, "\n", ""]);
+	exports.push([module.id, "\n.cs-panel[data-v-f6b8baac] {\n  width: 360px;\n  margin: 128px auto;\n}\n", ""]);
 
 	// exports
 
 
 /***/ },
 /* 16 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -10291,12 +10159,25 @@
 	//
 	//
 	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
 
 	exports.default = {
 	  name: 'signin',
-	  components: {},
+	  props: ['method', 'action'], // to be passed from rails view
+	  components: {
+	    'user-form': __webpack_require__(33)
+	  },
 	  data: function data(_) {
-	    return {};
+	    return {
+	      formInputs: [{ name: 'name', type: 'text', placeholder: 'username' }, { name: 'password', type: 'password', placeholder: 'and password' }]
+	    };
 	  }
 	};
 
@@ -10305,11 +10186,30 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){with(this) {
-	  return _m(0)
+	  return _h('div', {
+	    staticClass: "cs-page"
+	  }, [_h('div', {
+	    staticClass: "cs-panel"
+	  }, [_m(0), _h('div', {
+	    staticClass: "cs-panel-body"
+	  }, [_h('user-form', {
+	    attrs: {
+	      "firstState": "Sign in",
+	      "method": method,
+	      "action": action,
+	      "inputs": formInputs
+	    }
+	  }), _m(1), _h('router-link', {
+	    attrs: {
+	      "to": "/signup"
+	    }
+	  }, ["Create new account"])])])])
 	}},staticRenderFns: [function (){with(this) {
 	  return _h('div', {
-	    staticClass: "cs-page cs-page-signin"
-	  }, [_h('h1', ["Sign in"])])
+	    staticClass: "cs-panel-title"
+	  }, ["Sign in"])
+	}},function (){with(this) {
+	  return _h('hr')
 	}}]}
 	if (false) {
 	  module.hot.accept()
@@ -10325,13 +10225,13 @@
 	var __vue_exports__, __vue_options__
 
 	/* styles */
-	__webpack_require__(19)
+	__webpack_require__(27)
 
 	/* script */
 	__vue_exports__ = __webpack_require__(21)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(27)
+	var __vue_template__ = __webpack_require__(26)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -10346,6 +10246,7 @@
 	__vue_options__.__file = "/home/ubuntu/workspace/cs-mgmt/frontend/app/views/signup.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+	__vue_options__._scopeId = "data-v-cd8c0dc0"
 
 	/* hot reload */
 	if (false) {(function () {
@@ -10365,46 +10266,8 @@
 
 
 /***/ },
-/* 19 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-
-	// load the styles
-	var content = __webpack_require__(20);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(10)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-cd8c0dc0!./../../node_modules/sass-loader/index.js?indentedSyntax!./../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./signup.vue", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-cd8c0dc0!./../../node_modules/sass-loader/index.js?indentedSyntax!./../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./signup.vue");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 20 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(5)();
-	// imports
-
-
-	// module
-	exports.push([module.id, "\nbody {\n  background: #B2D9FF;\n}\n", ""]);
-
-	// exports
-
-
-/***/ },
+/* 19 */,
+/* 20 */,
 /* 21 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -10424,31 +10287,163 @@
 	//
 	//
 	//
+	//
+	//
+	//
+	//
+	//
 
 	exports.default = {
 	  name: 'signin',
+	  props: ['method', 'action'], // to be passed from rails view
 	  components: {
-	    SignupForm: __webpack_require__(22)
+	    'user-form': __webpack_require__(33)
 	  },
 	  data: function data(_) {
-	    return {};
+	    return {
+	      formInputs: [{ name: 'name', type: 'text', placeholder: 'e.g., brine' }, { name: 'email', type: 'text', placeholder: 'e.g., brine@example.com' }, { name: 'password', type: 'password', placeholder: 'at least 8 characters' }]
+	    };
 	  }
 	};
 
 /***/ },
-/* 22 */
+/* 22 */,
+/* 23 */,
+/* 24 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	function newXHR(resolve, reject) {
+	  var xhr = new XMLHttpRequest();
+	  xhr.onreadystatechange = function (_) {
+	    if (xhr.readyState == 4) {
+	      if (xhr.status == 200) {
+	        resolve(xhr.response);
+	      } else {
+	        reject(xhr.response);
+	      }
+	    }
+	  };
+	  return xhr;
+	}
+
+	exports.default = {
+	  sendJSON: function sendJSON(method, url, data) {
+	    return new Promise(function (resolve, reject) {
+	      var xhr = newXHR(resolve, reject);
+	      xhr.open(method, url, true);
+	      xhr.setRequestHeader('Content-Type', 'application/json; charset=utf-8');
+	      xhr.responseType = 'json';
+	      xhr.send(JSON.stringify(data));
+	    });
+	  },
+	  getHTML: function getHTML(url) {
+	    return new Promise(function (resolve, reject) {
+	      var xhr = newXHR(resolve, reject);
+	      xhr.open('get', url, true);
+	      xhr.setRequestHeader('x-pjax', '1');
+	      xhr.send();
+	    });
+	  }
+	};
+
+/***/ },
+/* 25 */,
+/* 26 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports={render:function (){with(this) {
+	  return _h('div', {
+	    staticClass: "cs-page"
+	  }, [_h('div', {
+	    staticClass: "cs-panel"
+	  }, [_m(0), _h('div', {
+	    staticClass: "cs-panel-body"
+	  }, [_h('user-form', {
+	    attrs: {
+	      "firstState": "Sign up",
+	      "method": method,
+	      "action": action,
+	      "inputs": formInputs
+	    }
+	  }), _m(1), _h('router-link', {
+	    attrs: {
+	      "to": "/"
+	    }
+	  }, ["Back"])])])])
+	}},staticRenderFns: [function (){with(this) {
+	  return _h('div', {
+	    staticClass: "cs-panel-title"
+	  }, ["Sign up"])
+	}},function (){with(this) {
+	  return _h('hr')
+	}}]}
+	if (false) {
+	  module.hot.accept()
+	  if (module.hot.data) {
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-cd8c0dc0", module.exports)
+	  }
+	}
+
+/***/ },
+/* 27 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(28);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(10)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-cd8c0dc0&scoped=true!./../../node_modules/sass-loader/index.js?indentedSyntax!./../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./signup.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-cd8c0dc0&scoped=true!./../../node_modules/sass-loader/index.js?indentedSyntax!./../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./signup.vue");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 28 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(5)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "\n.cs-panel[data-v-cd8c0dc0] {\n  width: 360px;\n  margin: 128px auto;\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 29 */,
+/* 30 */,
+/* 31 */,
+/* 32 */,
+/* 33 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 
-	/* styles */
-	__webpack_require__(23)
-
 	/* script */
-	__vue_exports__ = __webpack_require__(25)
+	__vue_exports__ = __webpack_require__(34)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(26)
+	var __vue_template__ = __webpack_require__(35)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -10460,10 +10455,9 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/home/ubuntu/workspace/cs-mgmt/frontend/app/views/signup/form.vue"
+	__vue_options__.__file = "/home/ubuntu/workspace/cs-mgmt/frontend/app/lib/components/form.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-54c6ad03"
 
 	/* hot reload */
 	if (false) {(function () {
@@ -10472,9 +10466,9 @@
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-54c6ad03", __vue_options__)
+	    hotAPI.createRecord("data-v-28cf00c8", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-54c6ad03", __vue_options__)
+	    hotAPI.reload("data-v-28cf00c8", __vue_options__)
 	  }
 	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] form.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -10483,56 +10477,27 @@
 
 
 /***/ },
-/* 23 */
+/* 34 */
 /***/ function(module, exports, __webpack_require__) {
 
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-
-	// load the styles
-	var content = __webpack_require__(24);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(10)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-54c6ad03&scoped=true!./../../../node_modules/sass-loader/index.js?indentedSyntax!./../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form.vue", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-54c6ad03&scoped=true!./../../../node_modules/sass-loader/index.js?indentedSyntax!./../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form.vue");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 24 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(5)();
-	// imports
-
-
-	// module
-	exports.push([module.id, "\n.cs-panel[data-v-54c6ad03] {\n  background: #fff;\n  width: 360px;\n  padding: 9px;\n}\n", ""]);
-
-	// exports
-
-
-/***/ },
-/* 25 */
-/***/ function(module, exports) {
-
-	"use strict";
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	//
-	//
+
+	var _request = __webpack_require__(24);
+
+	var _request2 = _interopRequireDefault(_request);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function getInitialValues(inputs) {
+	  return inputs.reduce(function (values, input) {
+	    values[input.name] = '';
+	    return values;
+	  }, {});
+	} //
 	//
 	//
 	//
@@ -10548,53 +10513,116 @@
 	//
 
 	exports.default = {
-	  name: "userform"
+	  name: 'user-form',
+	  props: ['first-state', 'method', 'action', 'inputs'],
+	  data: function data() {
+	    return {
+	      state: this.firstState,
+	      values: getInitialValues(this.inputs),
+	      errors: {}
+	    };
+	  },
+
+	  methods: {
+	    submit: function submit() {
+	      var _this = this;
+
+	      var success = function success(res) {
+	        if (res.status === 'success') {
+	          _this.$root.$router.push('signin');
+	        } else {
+	          throw new Error(res);
+	        }
+	      };
+
+	      var fail = function fail(res) {
+	        if (res.status === 'error') {
+	          console.log(res.errors);
+	          _this.errors = res.errors;
+	          _this.state = 'Retry';
+	        } else {
+	          throw new Error(res);
+	        }
+	      };
+
+	      this.state = 'Sending...';
+
+	      _request2.default.sendJSON(this.method, this.action, this.values).then(success).catch(fail);
+	    }
+	  }
 	};
 
 /***/ },
-/* 26 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports={render:function (){with(this) {
-	  return _m(0)
-	}},staticRenderFns: [function (){with(this) {
-	  return _h('div', {
-	    staticClass: "cs-panel"
-	  }, [_h('div', {
-	    staticClass: "cs-title"
-	  }, ["Sign Up"]), _h('form', {
-	    staticClass: "cs-form cs-form-userform"
-	  }, [_h('input', {
-	    attrs: {
-	      "type": "text"
-	    }
-	  }), _h('button', ["Login"])])])
-	}}]}
-	if (false) {
-	  module.hot.accept()
-	  if (module.hot.data) {
-	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-54c6ad03", module.exports)
-	  }
-	}
-
-/***/ },
-/* 27 */
+/* 35 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){with(this) {
 	  return _h('div', {
-	    staticClass: "cs-page cs-page-signin"
-	  }, [_h('SignupForm', {
-	    attrs: {
-	      "method": "post",
-	      "action": "/api/auth/sign_up"
+	    staticClass: "cs-form"
+	  }, [_l((inputs), function(input) {
+	    return _h('div', {
+	      staticClass: "cs-form-control"
+	    }, [_h('label', {
+	      attrs: {
+	        "for": input.name
+	      }
+	    }, [_s(input.name)]), (input.type === 'password') ? _h('div', [_h('input', {
+	      directives: [{
+	        name: "model",
+	        rawName: "v-model",
+	        value: (values[input.name]),
+	        expression: "values[input.name]"
+	      }],
+	      attrs: {
+	        "type": "password",
+	        "name": input.name,
+	        "placeholder": input.placeholder
+	      },
+	      domProps: {
+	        "value": _s(values[input.name])
+	      },
+	      on: {
+	        "input": function($event) {
+	          if ($event.target.composing) return;
+	          values[input.name] = $event.target.value
+	        }
+	      }
+	    })]) : _h('div', [_h('input', {
+	      directives: [{
+	        name: "model",
+	        rawName: "v-model",
+	        value: (values[input.name]),
+	        expression: "values[input.name]"
+	      }],
+	      attrs: {
+	        "type": "text",
+	        "placeholder": input.placeholder
+	      },
+	      domProps: {
+	        "value": _s(values[input.name])
+	      },
+	      on: {
+	        "input": function($event) {
+	          if ($event.target.composing) return;
+	          values[input.name] = $event.target.value
+	        }
+	      }
+	    })]), (errors[input.name] && errors[input.name].length) ? _h('div', {
+	      staticClass: "cs-form-errors"
+	    }, ["ERR: " + _s(errors[input.name])]) : _e()])
+	  }), _h('div', {
+	    staticClass: "cs-form-control"
+	  }, [_h('button', {
+	    staticClass: "cs-button-success",
+	    on: {
+	      "click": submit
 	    }
-	  })])
+	  }, [_s(state)])])])
 	}},staticRenderFns: []}
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-cd8c0dc0", module.exports)
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-28cf00c8", module.exports)
 	  }
 	}
 
