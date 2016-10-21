@@ -2,18 +2,13 @@
 </style>
 
 <template lang='pug'>
-  div.cs-page
-    h1 index
-    ul
-      li
-        router-link(to='/signin') Sign in
-      li
-        router-link(to='/signup') Sign up
+  div.cs-page.cs-page-signin
+    h1 Sign in
 </template>
 
 <script>
   export default {
-    name: 'index',
+    name: 'signin',
     components: {
     },
     data: _=> {

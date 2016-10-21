@@ -1,6 +1,9 @@
+const path = require('path');
+
 module.exports = {
-  context: __dirname + '/app',
-  entry: './index',
+  cache: true,
+  context: path.join(__dirname, 'app'),
+  entry: './main',
   output: { path: __dirname + '/../public/js', filename: 'bundle.js' },
   resolve: {
     alias: { 'vue': 'vue/dist/vue.js' }
@@ -9,6 +12,7 @@ module.exports = {
     loaders: [
       { test: /\.vue$/, loader: 'vue' },
       { test: /\.js$/,  loader: 'babel', exclude: /node_modules/ },
+      { test: /\.sass$/, loader: 'style!css!sass' },
       { test: /\.css$/, loader: 'style!css' }
     ],
   },
