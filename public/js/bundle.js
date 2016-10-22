@@ -9836,8 +9836,8 @@
 	var map = {
 		"./index.vue": 8,
 		"./signin.vue": 16,
-		"./signout.vue": 23,
-		"./signup.vue": 27
+		"./signout.vue": 26,
+		"./signup.vue": 30
 	};
 	function webpackContext(req) {
 		return __webpack_require__(webpackContextResolve(req));
@@ -10226,7 +10226,7 @@
 	__vue_exports__ = __webpack_require__(17)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(22)
+	var __vue_template__ = __webpack_require__(25)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -10311,7 +10311,7 @@
 	__vue_exports__ = __webpack_require__(19)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(21)
+	var __vue_template__ = __webpack_require__(24)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -10362,7 +10362,7 @@
 
 	exports.default = {
 	  name: 'userform',
-	  components: { userformInput: __webpack_require__(30) },
+	  components: { userformInput: __webpack_require__(21) },
 	  props: ['success-callback', 'first-state', 'method', 'action', 'inputs'],
 	  data: function data() {
 	    return {
@@ -10450,424 +10450,13 @@
 /* 21 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports={render:function (){with(this) {
-	  return _h('form', {
-	    staticClass: "cs-form",
-	    attrs: {
-	      "method": method,
-	      "action": action,
-	      "onsubmit": "return false;"
-	    }
-	  }, [_l((inputs), function(input) {
-	    return _h('div', {
-	      staticClass: "cs-form-control"
-	    }, [_h('userform-input', {
-	      attrs: {
-	        "input": input
-	      }
-	    }), (errors[input.name] && errors[input.name].length) ? _h('div', {
-	      staticClass: "cs-form-errors"
-	    }, ["ERR: " + _s(errors[input.name])]) : _e()])
-	  }), _h('div', {
-	    staticClass: "cs-form-control"
-	  }, [_h('button', {
-	    staticClass: "cs-button-success",
-	    on: {
-	      "click": submit
-	    }
-	  }, [_s(state)])])])
-	}},staticRenderFns: []}
-	if (false) {
-	  module.hot.accept()
-	  if (module.hot.data) {
-	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-26655f32", module.exports)
-	  }
-	}
-
-/***/ },
-/* 22 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports={render:function (){with(this) {
-	  return _h('div', {
-	    staticClass: "cs-page"
-	  }, [_h('div', {
-	    staticClass: "cs-panel"
-	  }, [_m(0), _h('div', {
-	    staticClass: "cs-panel-body"
-	  }, [_h('userform', {
-	    attrs: {
-	      "firstState": "Sign in",
-	      "method": "post",
-	      "action": userSessionPath,
-	      "inputs": formInputs
-	    }
-	  })]), _h('div', {
-	    staticClass: "cs-panel-footer"
-	  }, [_h('ul', [_h('li', [_m(1), _h('router-link', {
-	    attrs: {
-	      "to": "/signup"
-	    }
-	  }, ["Sign up now."])]), _h('li', [_h('router-link', {
-	    attrs: {
-	      "to": "/"
-	    }
-	  }, ["Back to home"])])])])])])
-	}},staticRenderFns: [function (){with(this) {
-	  return _h('div', {
-	    staticClass: "cs-panel-title"
-	  }, ["Sign in"])
-	}},function (){with(this) {
-	  return _h('span', ["New to codestand.io? "])
-	}}]}
-	if (false) {
-	  module.hot.accept()
-	  if (module.hot.data) {
-	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-f6b8baac", module.exports)
-	  }
-	}
-
-/***/ },
-/* 23 */
-/***/ function(module, exports, __webpack_require__) {
-
 	var __vue_exports__, __vue_options__
 
 	/* script */
-	__vue_exports__ = __webpack_require__(24)
+	__vue_exports__ = __webpack_require__(22)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(26)
-	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
-	if (
-	  typeof __vue_exports__.default === "object" ||
-	  typeof __vue_exports__.default === "function"
-	) {
-	if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
-	__vue_options__ = __vue_exports__ = __vue_exports__.default
-	}
-	if (typeof __vue_options__ === "function") {
-	  __vue_options__ = __vue_options__.options
-	}
-	__vue_options__.__file = "/home/ubuntu/workspace/cs-mgmt/frontend/app/views/signout.vue"
-	__vue_options__.render = __vue_template__.render
-	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-
-	/* hot reload */
-	if (false) {(function () {
-	  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
-	  hotAPI.install(require("vue"), false)
-	  if (!hotAPI.compatible) return
-	  module.hot.accept()
-	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-5ce1bb19", __vue_options__)
-	  } else {
-	    hotAPI.reload("data-v-5ce1bb19", __vue_options__)
-	  }
-	})()}
-	if (__vue_options__.functional) {console.error("[vue-loader] signout.vue: functional components are not supported and should be defined in plain js files using render functions.")}
-
-	module.exports = __vue_exports__
-
-
-/***/ },
-/* 24 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _webapi = __webpack_require__(25);
-
-	var _webapi2 = _interopRequireDefault(_webapi);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	exports.default = {
-	  props: ['user-session-path'],
-	  data: function data() {
-	    return {
-	      state: "Processing now...",
-	      errors: []
-	    };
-	  },
-	  mounted: function mounted() {
-	    var _this = this;
-
-	    console.log('signout: created', localStorage.getItem('cs-token'));
-	    new _webapi2.default(localStorage.getItem('cs-token')).signout(this.userSessionPath).then(function (res) {
-	      _this.state = 'OK, see you.';
-	      _this.reset();
-	      _this.move(150);
-	    }, function (res) {
-	      _this.state = 'Oops...';
-	      _this.errors = res.response && res.response.errors || res.statusText;
-	      _this.move(5000);
-	    });
-	  },
-
-	  methods: {
-	    reset: function reset() {
-	      localStorage.removeItem('cs-token');
-	      localStorage.removeItem('cs-username');
-	    },
-	    move: function move(delay) {
-	      var _this2 = this;
-
-	      setTimeout(function (_) {
-	        _this2.$root.$router.push('/');
-	      }, delay);
-	    }
-	  }
-	}; //
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-
-/***/ },
-/* 25 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _request = __webpack_require__(20);
-
-	var _request2 = _interopRequireDefault(_request);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	var API = function () {
-	  function API(token) {
-	    _classCallCheck(this, API);
-
-	    this.token = token;
-	  }
-
-	  _createClass(API, [{
-	    key: 'send',
-	    value: function send(method, url, data) {
-	      var _this = this;
-
-	      return new Promise(function (resolve, reject) {
-	        var headers = { Authorization: 'token ' + _this.token };
-	        _request2.default.sendJSON(method, url, data, { headers: headers }).then(function (res) {
-	          resolve(res.response.applications);
-	          // TODO: error handling
-	        }, reject);
-	      });
-	    }
-	  }, {
-	    key: 'signout',
-	    value: function signout() {
-	      return this.send('DELETE', '/api/auth/sign_out');
-	    }
-	  }, {
-	    key: 'apps',
-	    value: function apps(team) {
-	      return this.send('GET', '/api/' + team + '/apps');
-	    }
-	  }]);
-
-	  return API;
-	}();
-
-	exports.default = API;
-	;
-
-/***/ },
-/* 26 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports={render:function (){with(this) {
-	  return _h('div', {
-	    staticClass: "cs-page"
-	  }, [_h('div', {
-	    staticClass: "cs-panel"
-	  }, [_m(0), _h('div', {
-	    staticClass: "cs-panel-body"
-	  }, [_h('div', {
-	    staticClass: "cs-state"
-	  }, [_s(state)]), (errors.length > 0) ? _h('div', {
-	    staticClass: "cs-errors"
-	  }, [_s(errors)]) : _e()]), _h('div', {
-	    staticClass: "cs-panel-footer"
-	  }, [_h('router-link', {
-	    attrs: {
-	      "to": "/"
-	    }
-	  }, ["Home"])])])])
-	}},staticRenderFns: [function (){with(this) {
-	  return _h('div', {
-	    staticClass: "cs-panel-header"
-	  }, [_h('div', {
-	    staticClass: "cs-panel-title"
-	  }, ["Sign out"])])
-	}}]}
-	if (false) {
-	  module.hot.accept()
-	  if (module.hot.data) {
-	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-5ce1bb19", module.exports)
-	  }
-	}
-
-/***/ },
-/* 27 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __vue_exports__, __vue_options__
-
-	/* script */
-	__vue_exports__ = __webpack_require__(28)
-
-	/* template */
-	var __vue_template__ = __webpack_require__(29)
-	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
-	if (
-	  typeof __vue_exports__.default === "object" ||
-	  typeof __vue_exports__.default === "function"
-	) {
-	if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
-	__vue_options__ = __vue_exports__ = __vue_exports__.default
-	}
-	if (typeof __vue_options__ === "function") {
-	  __vue_options__ = __vue_options__.options
-	}
-	__vue_options__.__file = "/home/ubuntu/workspace/cs-mgmt/frontend/app/views/signup.vue"
-	__vue_options__.render = __vue_template__.render
-	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-
-	/* hot reload */
-	if (false) {(function () {
-	  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
-	  hotAPI.install(require("vue"), false)
-	  if (!hotAPI.compatible) return
-	  module.hot.accept()
-	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-cd8c0dc0", __vue_options__)
-	  } else {
-	    hotAPI.reload("data-v-cd8c0dc0", __vue_options__)
-	  }
-	})()}
-	if (__vue_options__.functional) {console.error("[vue-loader] signup.vue: functional components are not supported and should be defined in plain js files using render functions.")}
-
-	module.exports = __vue_exports__
-
-
-/***/ },
-/* 28 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-
-	exports.default = {
-	  name: 'signup',
-	  props: ['user-registration-path'],
-	  components: {
-	    'userform': __webpack_require__(18)
-	  },
-	  data: function data(_) {
-	    return {
-	      formInputs: [{ name: 'email', type: 'text', placeholder: 'e.g., brine@example.com' }, { name: 'name', type: 'text', placeholder: 'e.g., brine' }, { name: 'password', type: 'password', placeholder: 'at least 8 characters' }]
-	    };
-	  }
-	};
-
-/***/ },
-/* 29 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports={render:function (){with(this) {
-	  return _h('div', {
-	    staticClass: "cs-page"
-	  }, [_h('div', {
-	    staticClass: "cs-panel"
-	  }, [_m(0), _h('div', {
-	    staticClass: "cs-panel-body"
-	  }, [_h('userform', {
-	    attrs: {
-	      "firstState": "Sign up",
-	      "successCallback": "/signin",
-	      "method": "post",
-	      "action": userRegistrationPath,
-	      "inputs": formInputs
-	    }
-	  })]), _h('div', {
-	    staticClass: "cs-panel-footer"
-	  }, [_h('ul', [_h('li', [_m(1), _h('router-link', {
-	    attrs: {
-	      "to": "/signin"
-	    }
-	  }, ["Sign in."])]), _h('li', [_h('router-link', {
-	    attrs: {
-	      "to": "/"
-	    }
-	  }, ["Back to home"])])])])])])
-	}},staticRenderFns: [function (){with(this) {
-	  return _h('div', {
-	    staticClass: "cs-panel-header"
-	  }, [_h('div', {
-	    staticClass: "cs-panel-title"
-	  }, ["Sign up"])])
-	}},function (){with(this) {
-	  return _h('span', ["Have an account? "])
-	}}]}
-	if (false) {
-	  module.hot.accept()
-	  if (module.hot.data) {
-	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-cd8c0dc0", module.exports)
-	  }
-	}
-
-/***/ },
-/* 30 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __vue_exports__, __vue_options__
-
-	/* script */
-	__vue_exports__ = __webpack_require__(31)
-
-	/* template */
-	var __vue_template__ = __webpack_require__(32)
+	var __vue_template__ = __webpack_require__(23)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -10901,10 +10490,10 @@
 
 
 /***/ },
-/* 31 */
+/* 22 */
 /***/ function(module, exports) {
 
-	"use strict";
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -10920,12 +10509,12 @@
 	//
 
 	exports.default = {
-	  name: "userform-input",
+	  name: 'userform-input',
 	  props: ['input']
 	};
 
 /***/ },
-/* 32 */
+/* 23 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){with(this) {
@@ -10983,6 +10572,417 @@
 	  module.hot.accept()
 	  if (module.hot.data) {
 	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-43dfa0a2", module.exports)
+	  }
+	}
+
+/***/ },
+/* 24 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports={render:function (){with(this) {
+	  return _h('form', {
+	    staticClass: "cs-form",
+	    attrs: {
+	      "method": method,
+	      "action": action,
+	      "onsubmit": "return false;"
+	    }
+	  }, [_l((inputs), function(input) {
+	    return _h('div', {
+	      staticClass: "cs-form-control"
+	    }, [_h('userform-input', {
+	      attrs: {
+	        "input": input
+	      }
+	    }), (errors[input.name] && errors[input.name].length) ? _h('div', {
+	      staticClass: "cs-form-errors"
+	    }, ["ERR: " + _s(errors[input.name])]) : _e()])
+	  }), _h('div', {
+	    staticClass: "cs-form-control"
+	  }, [_h('button', {
+	    staticClass: "cs-button-success",
+	    on: {
+	      "click": submit
+	    }
+	  }, [_s(state)])])])
+	}},staticRenderFns: []}
+	if (false) {
+	  module.hot.accept()
+	  if (module.hot.data) {
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-26655f32", module.exports)
+	  }
+	}
+
+/***/ },
+/* 25 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports={render:function (){with(this) {
+	  return _h('div', {
+	    staticClass: "cs-page"
+	  }, [_h('div', {
+	    staticClass: "cs-panel"
+	  }, [_m(0), _h('div', {
+	    staticClass: "cs-panel-body"
+	  }, [_h('userform', {
+	    attrs: {
+	      "firstState": "Sign in",
+	      "method": "post",
+	      "action": userSessionPath,
+	      "inputs": formInputs
+	    }
+	  })]), _h('div', {
+	    staticClass: "cs-panel-footer"
+	  }, [_h('ul', [_h('li', [_m(1), _h('router-link', {
+	    attrs: {
+	      "to": "/signup"
+	    }
+	  }, ["Sign up now."])]), _h('li', [_h('router-link', {
+	    attrs: {
+	      "to": "/"
+	    }
+	  }, ["Back to home"])])])])])])
+	}},staticRenderFns: [function (){with(this) {
+	  return _h('div', {
+	    staticClass: "cs-panel-title"
+	  }, ["Sign in"])
+	}},function (){with(this) {
+	  return _h('span', ["New to codestand.io? "])
+	}}]}
+	if (false) {
+	  module.hot.accept()
+	  if (module.hot.data) {
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-f6b8baac", module.exports)
+	  }
+	}
+
+/***/ },
+/* 26 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_exports__, __vue_options__
+
+	/* script */
+	__vue_exports__ = __webpack_require__(27)
+
+	/* template */
+	var __vue_template__ = __webpack_require__(29)
+	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+	if (
+	  typeof __vue_exports__.default === "object" ||
+	  typeof __vue_exports__.default === "function"
+	) {
+	if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+	__vue_options__ = __vue_exports__ = __vue_exports__.default
+	}
+	if (typeof __vue_options__ === "function") {
+	  __vue_options__ = __vue_options__.options
+	}
+	__vue_options__.__file = "/home/ubuntu/workspace/cs-mgmt/frontend/app/views/signout.vue"
+	__vue_options__.render = __vue_template__.render
+	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+
+	/* hot reload */
+	if (false) {(function () {
+	  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  module.hot.accept()
+	  if (!module.hot.data) {
+	    hotAPI.createRecord("data-v-5ce1bb19", __vue_options__)
+	  } else {
+	    hotAPI.reload("data-v-5ce1bb19", __vue_options__)
+	  }
+	})()}
+	if (__vue_options__.functional) {console.error("[vue-loader] signout.vue: functional components are not supported and should be defined in plain js files using render functions.")}
+
+	module.exports = __vue_exports__
+
+
+/***/ },
+/* 27 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _webapi = __webpack_require__(28);
+
+	var _webapi2 = _interopRequireDefault(_webapi);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = {
+	  props: ['user-session-path'],
+	  data: function data() {
+	    return {
+	      state: 'Processing now...',
+	      errors: []
+	    };
+	  },
+	  mounted: function mounted() {
+	    var _this = this;
+
+	    console.log('signout: created', localStorage.getItem('cs-token'));
+	    new _webapi2.default(localStorage.getItem('cs-token')).signout(this.userSessionPath).then(function (res) {
+	      _this.state = 'OK, see you.';
+	      _this.reset();
+	      _this.move(150);
+	    }, function (res) {
+	      _this.state = 'Oops...';
+	      _this.errors = res.response && res.response.errors || res.statusText;
+	      _this.move(5000);
+	    });
+	  },
+
+	  methods: {
+	    reset: function reset() {
+	      localStorage.removeItem('cs-token');
+	      localStorage.removeItem('cs-username');
+	    },
+	    move: function move(delay) {
+	      var _this2 = this;
+
+	      setTimeout(function (_) {
+	        _this2.$root.$router.push('/');
+	      }, delay);
+	    }
+	  }
+	}; //
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+
+/***/ },
+/* 28 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _request = __webpack_require__(20);
+
+	var _request2 = _interopRequireDefault(_request);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	var API = function () {
+	  function API(token) {
+	    _classCallCheck(this, API);
+
+	    this.token = token;
+	  }
+
+	  _createClass(API, [{
+	    key: 'send',
+	    value: function send(method, url, data) {
+	      var _this = this;
+
+	      return new Promise(function (resolve, reject) {
+	        var headers = { Authorization: 'token ' + _this.token };
+	        _request2.default.sendJSON(method, url, data, { headers: headers }).then(function (res) {
+	          resolve(res.response.applications);
+	          // TODO: error handling
+	        }, reject);
+	      });
+	    }
+	  }, {
+	    key: 'signout',
+	    value: function signout() {
+	      return this.send('DELETE', '/api/auth/sign_out');
+	    }
+	  }, {
+	    key: 'apps',
+	    value: function apps(team) {
+	      return this.send('GET', '/api/' + team + '/apps');
+	    }
+	  }]);
+
+	  return API;
+	}();
+
+	exports.default = API;
+	;
+
+/***/ },
+/* 29 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports={render:function (){with(this) {
+	  return _h('div', {
+	    staticClass: "cs-page"
+	  }, [_h('div', {
+	    staticClass: "cs-panel"
+	  }, [_m(0), _h('div', {
+	    staticClass: "cs-panel-body"
+	  }, [_h('div', {
+	    staticClass: "cs-state"
+	  }, [_s(state)]), (errors.length > 0) ? _h('div', {
+	    staticClass: "cs-errors"
+	  }, [_s(errors)]) : _e()]), _h('div', {
+	    staticClass: "cs-panel-footer"
+	  }, [_h('router-link', {
+	    attrs: {
+	      "to": "/"
+	    }
+	  }, ["Home"])])])])
+	}},staticRenderFns: [function (){with(this) {
+	  return _h('div', {
+	    staticClass: "cs-panel-header"
+	  }, [_h('div', {
+	    staticClass: "cs-panel-title"
+	  }, ["Sign out"])])
+	}}]}
+	if (false) {
+	  module.hot.accept()
+	  if (module.hot.data) {
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-5ce1bb19", module.exports)
+	  }
+	}
+
+/***/ },
+/* 30 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_exports__, __vue_options__
+
+	/* script */
+	__vue_exports__ = __webpack_require__(31)
+
+	/* template */
+	var __vue_template__ = __webpack_require__(32)
+	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+	if (
+	  typeof __vue_exports__.default === "object" ||
+	  typeof __vue_exports__.default === "function"
+	) {
+	if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+	__vue_options__ = __vue_exports__ = __vue_exports__.default
+	}
+	if (typeof __vue_options__ === "function") {
+	  __vue_options__ = __vue_options__.options
+	}
+	__vue_options__.__file = "/home/ubuntu/workspace/cs-mgmt/frontend/app/views/signup.vue"
+	__vue_options__.render = __vue_template__.render
+	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+
+	/* hot reload */
+	if (false) {(function () {
+	  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  module.hot.accept()
+	  if (!module.hot.data) {
+	    hotAPI.createRecord("data-v-cd8c0dc0", __vue_options__)
+	  } else {
+	    hotAPI.reload("data-v-cd8c0dc0", __vue_options__)
+	  }
+	})()}
+	if (__vue_options__.functional) {console.error("[vue-loader] signup.vue: functional components are not supported and should be defined in plain js files using render functions.")}
+
+	module.exports = __vue_exports__
+
+
+/***/ },
+/* 31 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+
+	exports.default = {
+	  name: 'signup',
+	  props: ['user-registration-path'],
+	  components: {
+	    'userform': __webpack_require__(18)
+	  },
+	  data: function data(_) {
+	    return {
+	      formInputs: [{ name: 'email', type: 'text', placeholder: 'e.g., brine@example.com' }, { name: 'name', type: 'text', placeholder: 'e.g., brine' }, { name: 'password', type: 'password', placeholder: 'at least 8 characters' }]
+	    };
+	  }
+	};
+
+/***/ },
+/* 32 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports={render:function (){with(this) {
+	  return _h('div', {
+	    staticClass: "cs-page"
+	  }, [_h('div', {
+	    staticClass: "cs-panel"
+	  }, [_m(0), _h('div', {
+	    staticClass: "cs-panel-body"
+	  }, [_h('userform', {
+	    attrs: {
+	      "firstState": "Sign up",
+	      "successCallback": "/signin",
+	      "method": "post",
+	      "action": userRegistrationPath,
+	      "inputs": formInputs
+	    }
+	  })]), _h('div', {
+	    staticClass: "cs-panel-footer"
+	  }, [_h('ul', [_h('li', [_m(1), _h('router-link', {
+	    attrs: {
+	      "to": "/signin"
+	    }
+	  }, ["Sign in."])]), _h('li', [_h('router-link', {
+	    attrs: {
+	      "to": "/"
+	    }
+	  }, ["Back to home"])])])])])])
+	}},staticRenderFns: [function (){with(this) {
+	  return _h('div', {
+	    staticClass: "cs-panel-header"
+	  }, [_h('div', {
+	    staticClass: "cs-panel-title"
+	  }, ["Sign up"])])
+	}},function (){with(this) {
+	  return _h('span', ["Have an account? "])
+	}}]}
+	if (false) {
+	  module.hot.accept()
+	  if (module.hot.data) {
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-cd8c0dc0", module.exports)
 	  }
 	}
 
