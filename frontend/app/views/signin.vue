@@ -3,7 +3,7 @@
     .cs-panel
       .cs-panel-title Sign in
       .cs-panel-body
-        user-form(firstState="Sign in", method="post", :action="userSessionPath", :inputs="formInputs")
+        userform(firstState="Sign in", method="post", :action="userSessionPath", :inputs="formInputs")
       .cs-panel-footer
         ul
           li
@@ -17,7 +17,7 @@
   export default {
     name: 'signin',
     props: ['user-session-path'],
-    components: { 'user-form': require('components/form.vue') },
+    components: { 'userform': require('components/userform.vue') },
     data: () => {
       return {
         formSuccessCallback(xhr) {

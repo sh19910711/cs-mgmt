@@ -4,7 +4,7 @@
       .cs-panel-header
         .cs-panel-title Sign up
       .cs-panel-body
-        user-form(firstState="Sign up", successCallback="/signin", method="post", :action="userRegistrationPath", :inputs="formInputs")
+        userform(firstState="Sign up", successCallback="/signin", method="post", :action="userRegistrationPath", :inputs="formInputs")
       .cs-panel-footer
         ul
           li
@@ -19,7 +19,7 @@
     name: 'signup',
     props: ['user-registration-path'],
     components: {
-      'user-form': require('components/form.vue')
+      'userform': require('components/userform.vue')
     },
     data: _=> {
       return {

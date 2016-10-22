@@ -1,13 +1,10 @@
 <template lang='pug'>
   form.cs-form(:method="method", :action="action", onsubmit="return false;")
     .cs-form-control(v-for="input in inputs")
-      label(:for="input.name") {{input.name}}
-      div(v-if="input.type === 'password'")
-        input(type="password", :name="input.name", :autocomplete="input.name", v-model="values[input.name]", :placeholder="input.placeholder")
-      div(v-else)
-        input(type="text", :name="input.name", :autocomplete="input.name", v-model="values[input.name]", :placeholder="input.placeholder")
+      userform-input(:input="input")
       .cs-form-errors(v-if="errors[input.name] && errors[input.name].length")
         | ERR: {{errors[input.name]}}
+
     .cs-form-control
       button.cs-button-success(v-on:click='submit') {{state}}
 </template>
@@ -15,27 +12,17 @@
 <script>
   import Request from 'request';
 
-  function getInitialValues(inputs) {
-    return inputs.reduce(function(values, input) {
-      values[input.name] = '';
-      return values;
-    }, {})
-  }
-
   export default {
-    name: 'user-form',
+    name: 'userform',
+    components: { userformInput: require('./userform/input.vue') },
     props: ['success-callback', 'first-state', 'method', 'action', 'inputs'],
     data() {
       return {
         state: this.firstState,
-        values: getInitialValues(this.inputs),
-        errors: {},
+        errors: {}
       };
     },
     methods: {
-      needAutoComplete() {
-        return "off";
-      },
       submit() {
         const success = (xhr) => {
           this.state = 'Welcome';
@@ -54,7 +41,8 @@
         }
 
         this.state = 'Processing now...'
-        Request.sendJSON(this.method, this.action, this.values).then(success, fail);
+        const values = this.inputs.reduce((v, i) => { v[i.name] = i.value; return v }, {})
+        Request.sendJSON(this.method, this.action, values).then(success, fail);
       }
     }
   }
