@@ -8,22 +8,20 @@ function createRouter() {
   function route(path, name) {
     return {name: name, path: path, component: require(`./views/${name}.vue`)};
   }
-
   const routes = [
     route('/', 'index'),
     route('/signin', 'signin'),
     route('/signup', 'signup'),
-    route('/dashboard', 'dashboard'),
+    route('/signout', 'signout')
   ];
-  const router = new VueRouter({routes, mode: 'history'})
-  router.beforeEach((nextPage, _, done) => {
-    document.body.dataset.pageName = nextPage.name;
-    done();
-  });
-  return router;
+  return new VueRouter({routes, mode: 'history'});
 }
 
 window.onload = _ => {
   const router = createRouter();
+  router.beforeEach((nextPage, _, done) => {
+    document.body.dataset.pageName = nextPage.name;
+    done();
+  });
   new Vue({router}).$mount('#app');
 };

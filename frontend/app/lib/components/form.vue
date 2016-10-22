@@ -53,7 +53,7 @@
           this.state = 'Retry';
         }
 
-        this.state = 'Sending...'
+        this.state = 'Processing now...'
         Request.sendJSON(this.method, this.action, this.values).then(success, fail);
       }
     }

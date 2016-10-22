@@ -1,17 +1,17 @@
-<style lang='sass' scoped>
-  .cs-panel
-    width: 360px
-    margin: 128px auto
-</style>
-
 <template lang='pug'>
   .cs-page
     .cs-panel
-      .cs-panel-title Sign up
+      .cs-panel-header
+        .cs-panel-title Sign up
       .cs-panel-body
         user-form(firstState="Sign up", successCallback="/signin", method="post", :action="userRegistrationPath", :inputs="formInputs")
-        hr
-        router-link(to="/") Back
+      .cs-panel-footer
+        ul
+          li
+            span Have an account?&nbsp;
+            router-link(to="/signin") Sign in.
+          li
+            router-link(to="/") Back to home
 </template>
 
 <script>

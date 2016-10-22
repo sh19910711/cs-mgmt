@@ -5,15 +5,7 @@
 
 <template lang='pug'>
   .cs-page
-    .cs-nav
-      .cs-nav-left
-        h1.cs-nav-brand codestand.io
-      .cs-nav-right
-        ul.cs-nav-list
-          li
-            router-link(to="/signin") Sign in
-          li
-            router-link(to="/signup") Sign up
+    navbar
 
     .cs-leading
       .cs-leading-head
@@ -24,8 +16,9 @@
     // descriptions
     .cs-container
       .cs-block
-        h2.cs-block-head 1. Install CLI Toolchain
+        h2.cs-block-head 1. Install CLI toolchain
         .cs-block-body
+          h3 Mac OSX
           code
             | $ brew install codestand/codestand/codestand
 
@@ -48,3 +41,11 @@
             | $ codestand deploy
 
 </template>
+
+<script>
+  export default {
+    components: {
+      navbar: require('components/navbar.vue')
+    }
+  }
+</script>
