@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  # Frontend
+  root 'pages#page'
+  get '/signin', to: 'pages#page'
+  get '/signup', to: 'pages#page'
+  get '/dashboard', to: 'pages#page'
+
   scope :api do
     mount_devise_token_auth_for 'User', at: 'auth'
 
