@@ -9,23 +9,28 @@
     .cs-panel
       .cs-panel-title Sign in
       .cs-panel-body
-        user-form(firstState="Sign in", :method="method", :action="action", :inputs="formInputs")
+        user-form(firstState="Sign in", method="post", :action="userSessionPath", :inputs="formInputs")
         hr
         router-link(to="/signup") Create new account
+        span &nbsp;|&nbsp;
+        router-link(to="/") Back
 </template>
 
 <script>
   export default {
     name: 'signin',
-    props: ['method', 'action'], // to be passed from rails view
-    components: {
-      'user-form': require('components/form.vue')
-    },
-    data: _=> {
+    props: ['user-session-path'],
+    components: { 'user-form': require('components/form.vue') },
+    data: () => {
       return {
+        formSuccessCallback(xhr) {
+          localStorage.setItem('cs-token', xhr.getResponseHeader('token'));
+          localStorage.setItem('cs-username', xhr.getResponseHeader('username'));
+          this.$router.push('/dashboard');
+        },
         formInputs: [
           { name: 'name', type: 'text', placeholder: 'username', },
-          { name: 'password', type: 'password', placeholder: 'and password' }
+          { name: 'password', type: 'password', placeholder: 'password' }
         ]
       };
     }

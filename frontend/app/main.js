@@ -6,15 +6,25 @@ import Request from 'request';
 
 Vue.use(VueRouter);
 
+function route(path, name) {
+  return { name: name, path: path, component: require(`./views/${name}.vue`) };
+}
+
 const routes = [
-  { path: '/', component: require('./views/signin.vue') }, // TODO: create first page
-  { path: '/signin', component: require('./views/signin.vue') },
-  { path: '/signup', component: require('./views/signup.vue') },
+  route('/', 'index'),
+  route('/signin', 'signin'),
+  route('/signup', 'signup'),
+  route('/dashboard', 'dashboard'),
 ];
 
 const router = new VueRouter({
   mode: 'history',
   routes
+});
+
+router.beforeEach((nextPage, _, done) => {
+  document.body.dataset.pageName = nextPage.name;
+  done();
 });
 
 window.onload = _ => {

@@ -3,9 +3,9 @@ function newXHR(resolve, reject) {
   xhr.onreadystatechange = _ => {
     if(xhr.readyState == 4) {
       if (xhr.status == 200) {
-        resolve(xhr.response);
+        resolve(xhr);
       } else {
-        reject(xhr.response);
+        reject(xhr);
       }
     }
   };
@@ -23,12 +23,13 @@ export default {
     });
   },
 
-  getHTML(url) {
+  getJSON(url, opts) {
     return new Promise((resolve, reject) => {
       const xhr = newXHR(resolve, reject);
       xhr.open('get', url, true);
-      xhr.setRequestHeader('x-pjax', '1');
+      if (opts.headers) Object.keys(opts.headers).forEach(header => xhr.setRequestHeader(header, opts.headers[header]));
+      xhr.responseType = 'json';
       xhr.send();
-    })
+    });
   }
 };

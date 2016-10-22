@@ -1,11 +1,11 @@
 <template lang='pug'>
-  .cs-form
+  form.cs-form(:method="method", :action="action", onsubmit="return false;")
     .cs-form-control(v-for="input in inputs")
       label(:for="input.name") {{input.name}}
       div(v-if="input.type === 'password'")
-        input(type="password", :name="input.name", v-model="values[input.name]", :placeholder="input.placeholder")
+        input(type="password", :name="input.name", :autocomplete="input.name", v-model="values[input.name]", :placeholder="input.placeholder")
       div(v-else)
-        input(type="text", v-model="values[input.name]", :placeholder="input.placeholder")
+        input(type="text", :name="input.name", :autocomplete="input.name", v-model="values[input.name]", :placeholder="input.placeholder")
       .cs-form-errors(v-if="errors[input.name] && errors[input.name].length")
         | ERR: {{errors[input.name]}}
     .cs-form-control
@@ -24,7 +24,7 @@
 
   export default {
     name: 'user-form',
-    props: ['first-state', 'method', 'action', 'inputs'],
+    props: ['success-callback', 'first-state', 'method', 'action', 'inputs'],
     data() {
       return {
         state: this.firstState,
@@ -33,28 +33,28 @@
       };
     },
     methods: {
+      needAutoComplete() {
+        return "off";
+      },
       submit() {
-        const success = (res) => {
-          if (res.status === 'success') {
-            this.$root.$router.push('signin');
-          } else {
-            throw new Error(res);
-          }
+        const success = (xhr) => {
+          this.state = 'Welcome';
+          if (this.successCallback) this.$root.$router.push(this.successCallback);
+          if (this.$parent.formSuccessCallback)  this.$parent.formSuccessCallback(xhr);
         }
 
-        const fail = (res) => {
-          if (res.status === 'error') {
-            console.log(res.errors);
+        const fail = (xhr) => {
+          const res = xhr.response;
+          if (res && res.status === 'error') {
             this.errors = res.errors;
-            this.state = 'Retry'
           } else {
-            throw new Error(res);
+            this.errors = { msg: xhr.statusText };
           }
+          this.state = 'Retry';
         }
 
         this.state = 'Sending...'
-
-        Request.sendJSON(this.method, this.action, this.values).then(success).catch(fail);
+        Request.sendJSON(this.method, this.action, this.values).then(success, fail);
       }
     }
   }
