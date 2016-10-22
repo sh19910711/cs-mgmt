@@ -1,4 +1,4 @@
-<style lang="sass" scoped>
+<style lang='sass' scoped>
   .cs-block
     margin-bottom: 32px
 </style>

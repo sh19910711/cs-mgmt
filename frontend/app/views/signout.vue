@@ -5,9 +5,9 @@
         .cs-panel-title Sign out
       .cs-panel-body
         .cs-state {{state}}
-        .cs-errors(v-if="errors.length > 0") {{errors}}
+        .cs-errors(v-if='errors.length > 0') {{errors}}
       .cs-panel-footer
-        router-link(to="/") Home
+        router-link(to='/') Home
 </template>
 
 <script>
@@ -17,7 +17,7 @@
     props: ['user-session-path'],
     data() {
       return {
-        state: "Processing now...",
+        state: 'Processing now...',
         errors: []
       }
     },

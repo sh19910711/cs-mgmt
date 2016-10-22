@@ -4,14 +4,14 @@
       .cs-panel-header
         .cs-panel-title Sign up
       .cs-panel-body
-        userform(firstState="Sign up", successCallback="/signin", method="post", :action="userRegistrationPath", :inputs="formInputs")
+        userform(firstState='Sign up', successCallback='/signin', method='post', :action='userRegistrationPath', :inputs='formInputs')
       .cs-panel-footer
         ul
           li
             span Have an account?&nbsp;
-            router-link(to="/signin") Sign in.
+            router-link(to='/signin') Sign in.
           li
-            router-link(to="/") Back to home
+            router-link(to='/') Back to home
 </template>
 
 <script>

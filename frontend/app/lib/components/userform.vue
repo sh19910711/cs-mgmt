@@ -1,8 +1,8 @@
 <template lang='pug'>
-  form.cs-form(:method="method", :action="action", onsubmit="return false;")
-    .cs-form-control(v-for="input in inputs")
-      userform-input(:input="input")
-      .cs-form-errors(v-if="errors[input.name] && errors[input.name].length")
+  form.cs-form(:method='method', :action='action', onsubmit='return false;')
+    .cs-form-control(v-for='input in inputs')
+      userform-input(:input='input')
+      .cs-form-errors(v-if='errors[input.name] && errors[input.name].length')
         | ERR: {{errors[input.name]}}
 
     .cs-form-control

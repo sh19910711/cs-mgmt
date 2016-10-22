@@ -3,14 +3,14 @@
     .cs-panel
       .cs-panel-title Sign in
       .cs-panel-body
-        userform(firstState="Sign in", method="post", :action="userSessionPath", :inputs="formInputs")
+        userform(firstState='Sign in', method='post', :action='userSessionPath', :inputs='formInputs')
       .cs-panel-footer
         ul
           li
             span New to codestand.io?&nbsp;
-            router-link(to="/signup") Sign up now.
+            router-link(to='/signup') Sign up now.
           li
-            router-link(to="/") Back to home
+            router-link(to='/') Back to home
 </template>
 
 <script>
