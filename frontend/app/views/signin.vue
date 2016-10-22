@@ -29,7 +29,7 @@
           this.$router.push('/dashboard');
         },
         formInputs: [
-          { name: 'name', type: 'text', placeholder: 'username', },
+          { name: 'username', type: 'text', placeholder: 'username', },
           { name: 'password', type: 'password', placeholder: 'password' }
         ]
       };

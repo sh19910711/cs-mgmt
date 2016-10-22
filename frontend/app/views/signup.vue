@@ -16,7 +16,7 @@
 
 <script>
   export default {
-    name: 'signin',
+    name: 'signup',
     props: ['user-registration-path'],
     components: {
       'user-form': require('components/form.vue')
