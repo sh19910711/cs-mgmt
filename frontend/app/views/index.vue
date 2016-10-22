@@ -8,7 +8,7 @@
     navbar
 
     .cs-leading
-      .cs-leading-head
+      .cs-leading-header
         h1.cs-leading-title Welcome to codestand.io
       .cs-leading-body
         p Getting started with codestand.io.
@@ -16,26 +16,26 @@
     // descriptions
     .cs-container
       .cs-block
-        h2.cs-block-head 1. Install CLI toolchain
+        h2.cs-block-header 1. Install CLI toolchain
         .cs-block-body
           h3 Mac OSX
           code
             | $ brew install codestand/codestand/codestand
 
       .cs-block
-        h2.cs-block-head 2. Create and register your app
+        h2.cs-block-header 2. Create and register your app
         .cs-block-body
           code
             | $ codestand new --register led-blink
 
       .cs-block
-        h2.cs-block-head 3. Link your device to the codestand.io
+        h2.cs-block-header 3. Link your device to the codestand.io
         .cs-block-body
           code
             | $ codestand install
 
       .cs-block
-        h2.cs-block-head 4. Deploy the app to the device
+        h2.cs-block-header 4. Deploy the app to the device
         .cs-block-body
           code
             | $ codestand deploy

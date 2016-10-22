@@ -12,12 +12,9 @@ module.exports = {
     loaders: [
       { test: /\.vue$/, loader: 'vue' },
       { test: /\.js$/,  loader: 'babel', exclude: /node_modules/ },
-      { test: /\.sass$/, loader: 'style!css!sass' },
-      { test: /\.css$/, loader: 'style!css' }
+      { test: /\.sass$/, loader: 'style!css!sass' }
     ],
   },
   babel: { presets: ['es2015'] },
-  vue: {
-    loaders: { sass: 'vue-style-loader!css-loader!sass?indentedSyntax' }
-  }
+  vue: { loaders: { sass: 'style!css!sass?indentedSyntax' } }
 };

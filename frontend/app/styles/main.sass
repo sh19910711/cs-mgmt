@@ -33,7 +33,7 @@ body
     margin: 0 auto
 
 .cs-block
-  &-head
+  &-header
     color: $color-main-dark
   &-body
     code
@@ -44,24 +44,21 @@ body
 
 // show on top of page
 .cs-nav
-  $nav-height: 32px
-  *
-    display: inline-block
+  $nav-height: 36px
   &
+    height: $nav-height
     font-size: $nav-height/2
     padding: $side-padding
-    border-bottom: 3px solid $color-main-light
     background: #fff
+    *
+      display: inline-block
     &, a
       color: #666
   &-brand, &-list
     @include nomargin
-    font-size: $nav-height/2
-  &-brand
+    font-size: $nav-height/2.15
     line-height: $nav-height
   &-list
-    &
-      line-height: $nav-height
     li
       display: inline
       margin-left: 12px
@@ -76,24 +73,29 @@ body
   &
     text-align: center
     background: $color-main-dark
+    border: 0 solid $color-main-light
+    border-width: 3px 0
     color: $color-main-text
     padding: 32px 0
   &-title
     @include nomargin
     font-size: $font-size-large
-  &-head
+  &-header
     padding-top: 32px
   &-body
     padding: 12px 0
 
 // example: wrapping forms for signup signin
 .cs-panel
+  $panel-padding: 18px
   &
     background: #fff
     border: 1px solid $color-sub-light
     color: #555
-  &-header, &-body, &-footer
-    padding: 9px 18px
+  &-header, &-footer
+    padding: $panel-padding/2 $panel-padding
+  &-body
+    padding: $panel-padding
   &-footer
     background: $color-sub-light
     ul
