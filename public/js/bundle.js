@@ -62,7 +62,7 @@
 
 	function createRouter() {
 	  function route(path, name) {
-	    return { name: name, path: path, component: __webpack_require__(6)("./" + name + '.vue') };
+	    return { name: name, path: path, component: __webpack_require__(7)("./" + name + '.vue') };
 	  }
 	  var routes = [route('/', 'index'), route('/signin', 'signin'), route('/signup', 'signup'), route('/signout', 'signout')];
 	  return new _vueRouter2.default({ routes: routes, mode: 'history' });
@@ -9491,7 +9491,7 @@
 	var content = __webpack_require__(4);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(5)(content, {});
+	var update = __webpack_require__(6)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -9511,18 +9511,74 @@
 /* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(10)();
+	exports = module.exports = __webpack_require__(5)();
 	// imports
 
 
 	// module
-	exports.push([module.id, "body {\n  margin: 0;\n  padding: 0;\n  background: #fff; }\n\nbody[data-page-name=\"signin\"], body[data-page-name=\"signup\"], body[data-page-name=\"signout\"] {\n  background: #B2D9FF; }\n\nbody[data-page-name=\"signin\"] .cs-panel, body[data-page-name=\"signup\"] .cs-panel, body[data-page-name=\"signout\"] .cs-panel {\n  width: 360px;\n  margin: 128px auto; }\n\n.cs-container {\n  padding: 0 32px; }\n\n.cs-page-content {\n  font-size: 18px;\n  font-family: 'Source Sans Pro', sans-serif; }\n\n.cs-margin {\n  margin-top: 36px; }\n\n.cs-center {\n  margin: 0 auto; }\n\n.cs-block-head {\n  color: #6B8FB2; }\n\n.cs-block-body code {\n  display: block;\n  background: #FFE2B2;\n  color: #666666;\n  padding: 12px; }\n\n.cs-nav * {\n  display: inline-block; }\n\n.cs-nav {\n  font-size: 16px;\n  padding: 0 32px;\n  border-bottom: 3px solid #B2D9FF;\n  background: #fff; }\n  .cs-nav, .cs-nav a {\n    color: #666; }\n\n.cs-nav-brand, .cs-nav-list {\n  margin: 0;\n  padding: 0;\n  font-size: 16px; }\n\n.cs-nav-brand {\n  line-height: 32px; }\n\n.cs-nav-list {\n  line-height: 32px; }\n\n.cs-nav-list li {\n  display: inline;\n  margin-left: 12px; }\n\n.cs-nav-left {\n  float: left; }\n\n.cs-nav-right {\n  float: right; }\n\n.cs-nav:after {\n  content: '.';\n  clear: both;\n  display: block;\n  height: 0;\n  font-size: 0;\n  visibility: hidden; }\n\n.cs-leading {\n  text-align: center;\n  background: #6B8FB2;\n  color: #f0f0f0;\n  padding: 32px 0; }\n\n.cs-leading-title {\n  margin: 0;\n  padding: 0;\n  font-size: 32px; }\n\n.cs-leading-head {\n  padding-top: 32px; }\n\n.cs-leading-body {\n  padding: 12px 0; }\n\n.cs-panel {\n  background: #fff;\n  border: 1px solid #D4D4D4;\n  color: #555; }\n\n.cs-panel-header, .cs-panel-body, .cs-panel-footer {\n  padding: 9px 18px; }\n\n.cs-panel-footer {\n  background: #D4D4D4; }\n  .cs-panel-footer ul {\n    margin: 0;\n    padding: 0;\n    list-style: none;\n    line-height: 27px; }\n\n.cs-panel-title {\n  font-size: 32px;\n  line-height: 64px; }\n\n.cs-panel-desc {\n  font-size: 12px;\n  line-height: 36px; }\n\n.cs-panel-title, .cs-panel-desc {\n  text-align: center; }\n\n.cs-form label {\n  color: #999; }\n\n.cs-form-errors {\n  color: #c66;\n  margin-bottom: 12px; }\n\n.cs-form-control input, .cs-form-control button {\n  box-sizing: border-box;\n  width: 100%;\n  font-weight: normal;\n  height: 36px;\n  line-height: 36px;\n  padding: 0 12px;\n  margin: 12px 0; }\n\n.cs-form-control input {\n  border: 1px solid #D4D4D4; }\n\n.cs-form-control button {\n  cursor: pointer; }\n\n.cs-form-control input, .cs-form-control button {\n  font-size: 18px; }\n\n.cs-button-success {\n  background: #ce6;\n  border: 1px solid #be5;\n  color: #363; }\n\n.cs-page {\n  width: 100%;\n  height: 100%; }\n", ""]);
+	exports.push([module.id, "body {\n  margin: 0;\n  padding: 0;\n  background: #FFFFFF; }\n\nbody[data-page-name=\"signin\"], body[data-page-name=\"signup\"], body[data-page-name=\"signout\"] {\n  background: #B2D9FF; }\n\nbody[data-page-name=\"signin\"] .cs-panel, body[data-page-name=\"signup\"] .cs-panel, body[data-page-name=\"signout\"] .cs-panel {\n  width: 360px;\n  margin: 128px auto; }\n\n.cs-container {\n  padding: 0 32px; }\n\n.cs-page-content {\n  font-size: 18px;\n  font-family: 'Source Sans Pro', sans-serif; }\n\n.cs-margin {\n  margin-top: 36px; }\n\n.cs-center {\n  margin: 0 auto; }\n\n.cs-block-header {\n  color: #6B8FB2; }\n\n.cs-block-body code {\n  display: block;\n  background: #FFE2B2;\n  color: #666666;\n  border: 1px solid #dddddd;\n  padding: 12px; }\n\n.cs-nav {\n  height: 36px;\n  font-size: 18px;\n  padding: 0 32px;\n  background: #FFFFFF; }\n  .cs-nav * {\n    display: inline-block; }\n  .cs-nav, .cs-nav a {\n    color: #666; }\n\n.cs-nav-brand, .cs-nav-list {\n  margin: 0;\n  padding: 0;\n  font-size: 16.74419px;\n  line-height: 36px; }\n\n.cs-nav-list li {\n  display: inline;\n  margin-left: 12px; }\n\n.cs-nav-left {\n  float: left; }\n\n.cs-nav-right {\n  float: right; }\n\n.cs-nav:after {\n  content: '.';\n  clear: both;\n  display: block;\n  height: 0;\n  font-size: 0;\n  visibility: hidden; }\n\n.cs-leading {\n  text-align: center;\n  background: #6B8FB2;\n  border: 0 solid #B2D9FF;\n  border-width: 3px 0;\n  color: #F0F0F0;\n  padding: 32px 0; }\n\n.cs-leading-title {\n  margin: 0;\n  padding: 0;\n  font-size: 32px; }\n\n.cs-leading-header {\n  padding-top: 32px; }\n\n.cs-leading-body {\n  padding: 12px 0; }\n\n.cs-panel {\n  background: #FFFFFF;\n  border: 1px solid #D4D4D4;\n  color: #555; }\n\n.cs-panel-header, .cs-panel-footer {\n  padding: 9px 18px; }\n\n.cs-panel-body {\n  padding: 18px; }\n\n.cs-panel-footer {\n  background: #D4D4D4; }\n  .cs-panel-footer ul {\n    margin: 0;\n    padding: 0;\n    list-style: none;\n    line-height: 27px; }\n\n.cs-panel-title {\n  font-size: 32px;\n  line-height: 64px; }\n\n.cs-panel-desc {\n  font-size: 12px;\n  line-height: 36px; }\n\n.cs-panel-title, .cs-panel-desc {\n  text-align: center; }\n\n.cs-form label {\n  color: #999; }\n\n.cs-form-errors {\n  color: #c66;\n  margin-bottom: 12px; }\n\n.cs-form-control input, .cs-form-control button {\n  box-sizing: border-box;\n  width: 100%;\n  font-weight: normal;\n  height: 36px;\n  line-height: 36px;\n  padding: 0 12px;\n  margin: 12px 0; }\n\n.cs-form-control input {\n  border: 1px solid #D4D4D4; }\n\n.cs-form-control button {\n  cursor: pointer; }\n\n.cs-form-control input, .cs-form-control button {\n  font-size: 18px; }\n\n.cs-button-success {\n  background: #CCEE66;\n  border: 1px solid #BBEE55;\n  color: #336633; }\n\n.cs-page {\n  width: 100%;\n  height: 100%; }\n", ""]);
 
 	// exports
 
 
 /***/ },
 /* 5 */
+/***/ function(module, exports) {
+
+	/*
+		MIT License http://www.opensource.org/licenses/mit-license.php
+		Author Tobias Koppers @sokra
+	*/
+	// css base code, injected by the css-loader
+	module.exports = function() {
+		var list = [];
+
+		// return the list of modules as css string
+		list.toString = function toString() {
+			var result = [];
+			for(var i = 0; i < this.length; i++) {
+				var item = this[i];
+				if(item[2]) {
+					result.push("@media " + item[2] + "{" + item[1] + "}");
+				} else {
+					result.push(item[1]);
+				}
+			}
+			return result.join("");
+		};
+
+		// import a list of modules into the list
+		list.i = function(modules, mediaQuery) {
+			if(typeof modules === "string")
+				modules = [[null, modules, ""]];
+			var alreadyImportedModules = {};
+			for(var i = 0; i < this.length; i++) {
+				var id = this[i][0];
+				if(typeof id === "number")
+					alreadyImportedModules[id] = true;
+			}
+			for(i = 0; i < modules.length; i++) {
+				var item = modules[i];
+				// skip already imported module
+				// this implementation is not 100% perfect for weird media query combinations
+				//  when a module is imported multiple times with different media queries.
+				//  I hope this will never occur (Hey this way we have smaller bundles)
+				if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
+					if(mediaQuery && !item[2]) {
+						item[2] = mediaQuery;
+					} else if(mediaQuery) {
+						item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
+					}
+					list.push(item);
+				}
+			}
+		};
+		return list;
+	};
+
+
+/***/ },
+/* 6 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -9774,14 +9830,14 @@
 
 
 /***/ },
-/* 6 */
+/* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var map = {
-		"./index.vue": 7,
-		"./signin.vue": 17,
-		"./signout.vue": 24,
-		"./signup.vue": 28
+		"./index.vue": 8,
+		"./signin.vue": 16,
+		"./signout.vue": 23,
+		"./signup.vue": 27
 	};
 	function webpackContext(req) {
 		return __webpack_require__(webpackContextResolve(req));
@@ -9794,23 +9850,23 @@
 	};
 	webpackContext.resolve = webpackContextResolve;
 	module.exports = webpackContext;
-	webpackContext.id = 6;
+	webpackContext.id = 7;
 
 
 /***/ },
-/* 7 */
+/* 8 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 
 	/* styles */
-	__webpack_require__(8)
+	__webpack_require__(9)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(12)
+	__vue_exports__ = __webpack_require__(11)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(16)
+	var __vue_template__ = __webpack_require__(15)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -9845,16 +9901,16 @@
 
 
 /***/ },
-/* 8 */
+/* 9 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(9);
+	var content = __webpack_require__(10);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(11)(content, {});
+	var update = __webpack_require__(6)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -9871,10 +9927,10 @@
 	}
 
 /***/ },
-/* 9 */
+/* 10 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(10)();
+	exports = module.exports = __webpack_require__(5)();
 	// imports
 
 
@@ -9885,285 +9941,7 @@
 
 
 /***/ },
-/* 10 */
-/***/ function(module, exports) {
-
-	/*
-		MIT License http://www.opensource.org/licenses/mit-license.php
-		Author Tobias Koppers @sokra
-	*/
-	// css base code, injected by the css-loader
-	module.exports = function() {
-		var list = [];
-
-		// return the list of modules as css string
-		list.toString = function toString() {
-			var result = [];
-			for(var i = 0; i < this.length; i++) {
-				var item = this[i];
-				if(item[2]) {
-					result.push("@media " + item[2] + "{" + item[1] + "}");
-				} else {
-					result.push(item[1]);
-				}
-			}
-			return result.join("");
-		};
-
-		// import a list of modules into the list
-		list.i = function(modules, mediaQuery) {
-			if(typeof modules === "string")
-				modules = [[null, modules, ""]];
-			var alreadyImportedModules = {};
-			for(var i = 0; i < this.length; i++) {
-				var id = this[i][0];
-				if(typeof id === "number")
-					alreadyImportedModules[id] = true;
-			}
-			for(i = 0; i < modules.length; i++) {
-				var item = modules[i];
-				// skip already imported module
-				// this implementation is not 100% perfect for weird media query combinations
-				//  when a module is imported multiple times with different media queries.
-				//  I hope this will never occur (Hey this way we have smaller bundles)
-				if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
-					if(mediaQuery && !item[2]) {
-						item[2] = mediaQuery;
-					} else if(mediaQuery) {
-						item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
-					}
-					list.push(item);
-				}
-			}
-		};
-		return list;
-	};
-
-
-/***/ },
 /* 11 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/*
-		MIT License http://www.opensource.org/licenses/mit-license.php
-		Author Tobias Koppers @sokra
-	*/
-	var stylesInDom = {},
-		memoize = function(fn) {
-			var memo;
-			return function () {
-				if (typeof memo === "undefined") memo = fn.apply(this, arguments);
-				return memo;
-			};
-		},
-		isOldIE = memoize(function() {
-			return /msie [6-9]\b/.test(window.navigator.userAgent.toLowerCase());
-		}),
-		getHeadElement = memoize(function () {
-			return document.head || document.getElementsByTagName("head")[0];
-		}),
-		singletonElement = null,
-		singletonCounter = 0,
-		styleElementsInsertedAtTop = [];
-
-	module.exports = function(list, options) {
-		if(false) {
-			if(typeof document !== "object") throw new Error("The style-loader cannot be used in a non-browser environment");
-		}
-
-		options = options || {};
-		// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
-		// tags it will allow on a page
-		if (typeof options.singleton === "undefined") options.singleton = isOldIE();
-
-		// By default, add <style> tags to the bottom of <head>.
-		if (typeof options.insertAt === "undefined") options.insertAt = "bottom";
-
-		var styles = listToStyles(list);
-		addStylesToDom(styles, options);
-
-		return function update(newList) {
-			var mayRemove = [];
-			for(var i = 0; i < styles.length; i++) {
-				var item = styles[i];
-				var domStyle = stylesInDom[item.id];
-				domStyle.refs--;
-				mayRemove.push(domStyle);
-			}
-			if(newList) {
-				var newStyles = listToStyles(newList);
-				addStylesToDom(newStyles, options);
-			}
-			for(var i = 0; i < mayRemove.length; i++) {
-				var domStyle = mayRemove[i];
-				if(domStyle.refs === 0) {
-					for(var j = 0; j < domStyle.parts.length; j++)
-						domStyle.parts[j]();
-					delete stylesInDom[domStyle.id];
-				}
-			}
-		};
-	}
-
-	function addStylesToDom(styles, options) {
-		for(var i = 0; i < styles.length; i++) {
-			var item = styles[i];
-			var domStyle = stylesInDom[item.id];
-			if(domStyle) {
-				domStyle.refs++;
-				for(var j = 0; j < domStyle.parts.length; j++) {
-					domStyle.parts[j](item.parts[j]);
-				}
-				for(; j < item.parts.length; j++) {
-					domStyle.parts.push(addStyle(item.parts[j], options));
-				}
-			} else {
-				var parts = [];
-				for(var j = 0; j < item.parts.length; j++) {
-					parts.push(addStyle(item.parts[j], options));
-				}
-				stylesInDom[item.id] = {id: item.id, refs: 1, parts: parts};
-			}
-		}
-	}
-
-	function listToStyles(list) {
-		var styles = [];
-		var newStyles = {};
-		for(var i = 0; i < list.length; i++) {
-			var item = list[i];
-			var id = item[0];
-			var css = item[1];
-			var media = item[2];
-			var sourceMap = item[3];
-			var part = {css: css, media: media, sourceMap: sourceMap};
-			if(!newStyles[id])
-				styles.push(newStyles[id] = {id: id, parts: [part]});
-			else
-				newStyles[id].parts.push(part);
-		}
-		return styles;
-	}
-
-	function insertStyleElement(options, styleElement) {
-		var head = getHeadElement();
-		var lastStyleElementInsertedAtTop = styleElementsInsertedAtTop[styleElementsInsertedAtTop.length - 1];
-		if (options.insertAt === "top") {
-			if(!lastStyleElementInsertedAtTop) {
-				head.insertBefore(styleElement, head.firstChild);
-			} else if(lastStyleElementInsertedAtTop.nextSibling) {
-				head.insertBefore(styleElement, lastStyleElementInsertedAtTop.nextSibling);
-			} else {
-				head.appendChild(styleElement);
-			}
-			styleElementsInsertedAtTop.push(styleElement);
-		} else if (options.insertAt === "bottom") {
-			head.appendChild(styleElement);
-		} else {
-			throw new Error("Invalid value for parameter 'insertAt'. Must be 'top' or 'bottom'.");
-		}
-	}
-
-	function removeStyleElement(styleElement) {
-		styleElement.parentNode.removeChild(styleElement);
-		var idx = styleElementsInsertedAtTop.indexOf(styleElement);
-		if(idx >= 0) {
-			styleElementsInsertedAtTop.splice(idx, 1);
-		}
-	}
-
-	function createStyleElement(options) {
-		var styleElement = document.createElement("style");
-		styleElement.type = "text/css";
-		insertStyleElement(options, styleElement);
-		return styleElement;
-	}
-
-	function addStyle(obj, options) {
-		var styleElement, update, remove;
-
-		if (options.singleton) {
-			var styleIndex = singletonCounter++;
-			styleElement = singletonElement || (singletonElement = createStyleElement(options));
-			update = applyToSingletonTag.bind(null, styleElement, styleIndex, false);
-			remove = applyToSingletonTag.bind(null, styleElement, styleIndex, true);
-		} else {
-			styleElement = createStyleElement(options);
-			update = applyToTag.bind(null, styleElement);
-			remove = function() {
-				removeStyleElement(styleElement);
-			};
-		}
-
-		update(obj);
-
-		return function updateStyle(newObj) {
-			if(newObj) {
-				if(newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap)
-					return;
-				update(obj = newObj);
-			} else {
-				remove();
-			}
-		};
-	}
-
-	var replaceText = (function () {
-		var textStore = [];
-
-		return function (index, replacement) {
-			textStore[index] = replacement;
-			return textStore.filter(Boolean).join('\n');
-		};
-	})();
-
-	function applyToSingletonTag(styleElement, index, remove, obj) {
-		var css = remove ? "" : obj.css;
-
-		if (styleElement.styleSheet) {
-			styleElement.styleSheet.cssText = replaceText(index, css);
-		} else {
-			var cssNode = document.createTextNode(css);
-			var childNodes = styleElement.childNodes;
-			if (childNodes[index]) styleElement.removeChild(childNodes[index]);
-			if (childNodes.length) {
-				styleElement.insertBefore(cssNode, childNodes[index]);
-			} else {
-				styleElement.appendChild(cssNode);
-			}
-		}
-	}
-
-	function applyToTag(styleElement, obj) {
-		var css = obj.css;
-		var media = obj.media;
-		var sourceMap = obj.sourceMap;
-
-		if (media) {
-			styleElement.setAttribute("media", media);
-		}
-
-		if (sourceMap) {
-			// https://developer.chrome.com/devtools/docs/javascript-debugging
-			// this makes source maps inside style tags work properly in Chrome
-			css += '\n/*# sourceURL=' + sourceMap.sources[0] + ' */';
-			// http://stackoverflow.com/a/26603875
-			css += "\n/*# sourceMappingURL=data:application/json;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + " */";
-		}
-
-		if (styleElement.styleSheet) {
-			styleElement.styleSheet.cssText = css;
-		} else {
-			while(styleElement.firstChild) {
-				styleElement.removeChild(styleElement.firstChild);
-			}
-			styleElement.appendChild(document.createTextNode(css));
-		}
-	}
-
-
-/***/ },
-/* 12 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -10218,21 +9996,21 @@
 
 	exports.default = {
 	  components: {
-	    navbar: __webpack_require__(13)
+	    navbar: __webpack_require__(12)
 	  }
 	};
 
 /***/ },
-/* 13 */
+/* 12 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 
 	/* script */
-	__vue_exports__ = __webpack_require__(14)
+	__vue_exports__ = __webpack_require__(13)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(15)
+	var __vue_template__ = __webpack_require__(14)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -10266,7 +10044,7 @@
 
 
 /***/ },
-/* 14 */
+/* 13 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -10317,7 +10095,7 @@
 	};
 
 /***/ },
-/* 15 */
+/* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){with(this) {
@@ -10385,7 +10163,7 @@
 	}
 
 /***/ },
-/* 16 */
+/* 15 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){with(this) {
@@ -10396,7 +10174,7 @@
 	  return _h('div', {
 	    staticClass: "cs-leading"
 	  }, [_h('div', {
-	    staticClass: "cs-leading-head"
+	    staticClass: "cs-leading-header"
 	  }, [_h('h1', {
 	    staticClass: "cs-leading-title"
 	  }, ["Welcome to codestand.io"])]), _h('div', {
@@ -10408,25 +10186,25 @@
 	  }, [_h('div', {
 	    staticClass: "cs-block"
 	  }, [_h('h2', {
-	    staticClass: "cs-block-head"
+	    staticClass: "cs-block-header"
 	  }, ["1. Install CLI toolchain"]), _h('div', {
 	    staticClass: "cs-block-body"
 	  }, [_h('h3', ["Mac OSX"]), _h('code', ["$ brew install codestand/codestand/codestand"])])]), _h('div', {
 	    staticClass: "cs-block"
 	  }, [_h('h2', {
-	    staticClass: "cs-block-head"
+	    staticClass: "cs-block-header"
 	  }, ["2. Create and register your app"]), _h('div', {
 	    staticClass: "cs-block-body"
 	  }, [_h('code', ["$ codestand new --register led-blink"])])]), _h('div', {
 	    staticClass: "cs-block"
 	  }, [_h('h2', {
-	    staticClass: "cs-block-head"
+	    staticClass: "cs-block-header"
 	  }, ["3. Link your device to the codestand.io"]), _h('div', {
 	    staticClass: "cs-block-body"
 	  }, [_h('code', ["$ codestand install"])])]), _h('div', {
 	    staticClass: "cs-block"
 	  }, [_h('h2', {
-	    staticClass: "cs-block-head"
+	    staticClass: "cs-block-header"
 	  }, ["4. Deploy the app to the device"]), _h('div', {
 	    staticClass: "cs-block-body"
 	  }, [_h('code', ["$ codestand deploy"])])])])
@@ -10439,16 +10217,16 @@
 	}
 
 /***/ },
-/* 17 */
+/* 16 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 
 	/* script */
-	__vue_exports__ = __webpack_require__(18)
+	__vue_exports__ = __webpack_require__(17)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(23)
+	var __vue_template__ = __webpack_require__(22)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -10482,7 +10260,7 @@
 
 
 /***/ },
-/* 18 */
+/* 17 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -10509,7 +10287,7 @@
 	exports.default = {
 	  name: 'signin',
 	  props: ['user-session-path'],
-	  components: { 'user-form': __webpack_require__(19) },
+	  components: { 'userform': __webpack_require__(18) },
 	  data: function data() {
 	    return {
 	      formSuccessCallback: function formSuccessCallback(xhr) {
@@ -10524,16 +10302,16 @@
 	};
 
 /***/ },
-/* 19 */
+/* 18 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 
 	/* script */
-	__vue_exports__ = __webpack_require__(20)
+	__vue_exports__ = __webpack_require__(19)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(22)
+	var __vue_template__ = __webpack_require__(21)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -10545,7 +10323,7 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/home/ubuntu/workspace/cs-mgmt/frontend/app/lib/components/form.vue"
+	__vue_options__.__file = "/home/ubuntu/workspace/cs-mgmt/frontend/app/lib/components/userform.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 
@@ -10556,18 +10334,18 @@
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-28cf00c8", __vue_options__)
+	    hotAPI.createRecord("data-v-26655f32", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-28cf00c8", __vue_options__)
+	    hotAPI.reload("data-v-26655f32", __vue_options__)
 	  }
 	})()}
-	if (__vue_options__.functional) {console.error("[vue-loader] form.vue: functional components are not supported and should be defined in plain js files using render functions.")}
+	if (__vue_options__.functional) {console.error("[vue-loader] userform.vue: functional components are not supported and should be defined in plain js files using render functions.")}
 
 	module.exports = __vue_exports__
 
 
 /***/ },
-/* 20 */
+/* 19 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -10576,47 +10354,24 @@
 	  value: true
 	});
 
-	var _request = __webpack_require__(21);
+	var _request = __webpack_require__(20);
 
 	var _request2 = _interopRequireDefault(_request);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	function getInitialValues(inputs) {
-	  return inputs.reduce(function (values, input) {
-	    values[input.name] = '';
-	    return values;
-	  }, {});
-	} //
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-
 	exports.default = {
-	  name: 'user-form',
+	  name: 'userform',
+	  components: { userformInput: __webpack_require__(30) },
 	  props: ['success-callback', 'first-state', 'method', 'action', 'inputs'],
 	  data: function data() {
 	    return {
 	      state: this.firstState,
-	      values: getInitialValues(this.inputs),
 	      errors: {}
 	    };
 	  },
 
 	  methods: {
-	    needAutoComplete: function needAutoComplete() {
-	      return "off";
-	    },
 	    submit: function submit() {
 	      var _this = this;
 
@@ -10637,13 +10392,26 @@
 	      };
 
 	      this.state = 'Processing now...';
-	      _request2.default.sendJSON(this.method, this.action, this.values).then(success, fail);
+	      var values = this.inputs.reduce(function (v, i) {
+	        v[i.name] = i.value;return v;
+	      }, {});
+	      _request2.default.sendJSON(this.method, this.action, values).then(success, fail);
 	    }
 	  }
-	};
+	}; //
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
 
 /***/ },
-/* 21 */
+/* 20 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -10679,7 +10447,7 @@
 	};
 
 /***/ },
-/* 22 */
+/* 21 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){with(this) {
@@ -10693,55 +10461,11 @@
 	  }, [_l((inputs), function(input) {
 	    return _h('div', {
 	      staticClass: "cs-form-control"
-	    }, [_h('label', {
+	    }, [_h('userform-input', {
 	      attrs: {
-	        "for": input.name
+	        "input": input
 	      }
-	    }, [_s(input.name)]), (input.type === 'password') ? _h('div', [_h('input', {
-	      directives: [{
-	        name: "model",
-	        rawName: "v-model",
-	        value: (values[input.name]),
-	        expression: "values[input.name]"
-	      }],
-	      attrs: {
-	        "type": "password",
-	        "name": input.name,
-	        "autocomplete": input.name,
-	        "placeholder": input.placeholder
-	      },
-	      domProps: {
-	        "value": _s(values[input.name])
-	      },
-	      on: {
-	        "input": function($event) {
-	          if ($event.target.composing) return;
-	          values[input.name] = $event.target.value
-	        }
-	      }
-	    })]) : _h('div', [_h('input', {
-	      directives: [{
-	        name: "model",
-	        rawName: "v-model",
-	        value: (values[input.name]),
-	        expression: "values[input.name]"
-	      }],
-	      attrs: {
-	        "type": "text",
-	        "name": input.name,
-	        "autocomplete": input.name,
-	        "placeholder": input.placeholder
-	      },
-	      domProps: {
-	        "value": _s(values[input.name])
-	      },
-	      on: {
-	        "input": function($event) {
-	          if ($event.target.composing) return;
-	          values[input.name] = $event.target.value
-	        }
-	      }
-	    })]), (errors[input.name] && errors[input.name].length) ? _h('div', {
+	    }), (errors[input.name] && errors[input.name].length) ? _h('div', {
 	      staticClass: "cs-form-errors"
 	    }, ["ERR: " + _s(errors[input.name])]) : _e()])
 	  }), _h('div', {
@@ -10756,12 +10480,12 @@
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-28cf00c8", module.exports)
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-26655f32", module.exports)
 	  }
 	}
 
 /***/ },
-/* 23 */
+/* 22 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){with(this) {
@@ -10771,7 +10495,7 @@
 	    staticClass: "cs-panel"
 	  }, [_m(0), _h('div', {
 	    staticClass: "cs-panel-body"
-	  }, [_h('user-form', {
+	  }, [_h('userform', {
 	    attrs: {
 	      "firstState": "Sign in",
 	      "method": "post",
@@ -10804,16 +10528,16 @@
 	}
 
 /***/ },
-/* 24 */
+/* 23 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 
 	/* script */
-	__vue_exports__ = __webpack_require__(25)
+	__vue_exports__ = __webpack_require__(24)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(27)
+	var __vue_template__ = __webpack_require__(26)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -10847,7 +10571,7 @@
 
 
 /***/ },
-/* 25 */
+/* 24 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -10856,7 +10580,7 @@
 	  value: true
 	});
 
-	var _webapi = __webpack_require__(26);
+	var _webapi = __webpack_require__(25);
 
 	var _webapi2 = _interopRequireDefault(_webapi);
 
@@ -10912,7 +10636,7 @@
 	//
 
 /***/ },
-/* 26 */
+/* 25 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -10923,7 +10647,7 @@
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _request = __webpack_require__(21);
+	var _request = __webpack_require__(20);
 
 	var _request2 = _interopRequireDefault(_request);
 
@@ -10970,7 +10694,7 @@
 	;
 
 /***/ },
-/* 27 */
+/* 26 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){with(this) {
@@ -11006,16 +10730,16 @@
 	}
 
 /***/ },
-/* 28 */
+/* 27 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 
 	/* script */
-	__vue_exports__ = __webpack_require__(29)
+	__vue_exports__ = __webpack_require__(28)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(30)
+	var __vue_template__ = __webpack_require__(29)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -11049,7 +10773,7 @@
 
 
 /***/ },
-/* 29 */
+/* 28 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -11078,7 +10802,7 @@
 	  name: 'signup',
 	  props: ['user-registration-path'],
 	  components: {
-	    'user-form': __webpack_require__(19)
+	    'userform': __webpack_require__(18)
 	  },
 	  data: function data(_) {
 	    return {
@@ -11088,7 +10812,7 @@
 	};
 
 /***/ },
-/* 30 */
+/* 29 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){with(this) {
@@ -11098,7 +10822,7 @@
 	    staticClass: "cs-panel"
 	  }, [_m(0), _h('div', {
 	    staticClass: "cs-panel-body"
-	  }, [_h('user-form', {
+	  }, [_h('userform', {
 	    attrs: {
 	      "firstState": "Sign up",
 	      "successCallback": "/signin",
@@ -11130,6 +10854,135 @@
 	  module.hot.accept()
 	  if (module.hot.data) {
 	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-cd8c0dc0", module.exports)
+	  }
+	}
+
+/***/ },
+/* 30 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_exports__, __vue_options__
+
+	/* script */
+	__vue_exports__ = __webpack_require__(31)
+
+	/* template */
+	var __vue_template__ = __webpack_require__(32)
+	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+	if (
+	  typeof __vue_exports__.default === "object" ||
+	  typeof __vue_exports__.default === "function"
+	) {
+	if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+	__vue_options__ = __vue_exports__ = __vue_exports__.default
+	}
+	if (typeof __vue_options__ === "function") {
+	  __vue_options__ = __vue_options__.options
+	}
+	__vue_options__.__file = "/home/ubuntu/workspace/cs-mgmt/frontend/app/lib/components/userform/input.vue"
+	__vue_options__.render = __vue_template__.render
+	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+
+	/* hot reload */
+	if (false) {(function () {
+	  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  module.hot.accept()
+	  if (!module.hot.data) {
+	    hotAPI.createRecord("data-v-43dfa0a2", __vue_options__)
+	  } else {
+	    hotAPI.reload("data-v-43dfa0a2", __vue_options__)
+	  }
+	})()}
+	if (__vue_options__.functional) {console.error("[vue-loader] input.vue: functional components are not supported and should be defined in plain js files using render functions.")}
+
+	module.exports = __vue_exports__
+
+
+/***/ },
+/* 31 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+
+	exports.default = {
+	  name: "userform-input",
+	  props: ['input']
+	};
+
+/***/ },
+/* 32 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports={render:function (){with(this) {
+	  return _h('div', {
+	    staticClass: "cs-form-input"
+	  }, [_h('label', {
+	    attrs: {
+	      "for": input.name
+	    }
+	  }, [_s(input.name)]), (input.type === 'password') ? _h('div', [_h('input', {
+	    directives: [{
+	      name: "model",
+	      rawName: "v-model",
+	      value: (input.value),
+	      expression: "input.value"
+	    }],
+	    attrs: {
+	      "type": "password",
+	      "name": input.name,
+	      "placeholder": input.placeholder
+	    },
+	    domProps: {
+	      "value": _s(input.value)
+	    },
+	    on: {
+	      "input": function($event) {
+	        if ($event.target.composing) return;
+	        input.value = $event.target.value
+	      }
+	    }
+	  })]) : _h('div', [_h('input', {
+	    directives: [{
+	      name: "model",
+	      rawName: "v-model",
+	      value: (input.value),
+	      expression: "input.value"
+	    }],
+	    attrs: {
+	      "type": "text",
+	      "name": input.name,
+	      "placeholder": input.placeholder
+	    },
+	    domProps: {
+	      "value": _s(input.value)
+	    },
+	    on: {
+	      "input": function($event) {
+	        if ($event.target.composing) return;
+	        input.value = $event.target.value
+	      }
+	    }
+	  })])])
+	}},staticRenderFns: []}
+	if (false) {
+	  module.hot.accept()
+	  if (module.hot.data) {
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-43dfa0a2", module.exports)
 	  }
 	}
 
