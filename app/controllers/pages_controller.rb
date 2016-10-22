@@ -1,21 +1,8 @@
 class PagesController < ActionController::Base
-  def signin
-    @user = User.new
-    render :signin, layout: layout_for_request
+  def page
   end
 
-  def signup
-    @user = User.new
-    render :signup, layout: layout_for_request
-  end
-
-  private
-
-  def layout_for_request
-    if request.headers['X-PJAX'].present?
-      nil
-    else
-      'pages'
-    end
+  def default_render
+    render :router
   end
 end

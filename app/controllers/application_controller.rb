@@ -39,7 +39,7 @@ class ApplicationController < ActionController::API
 
   def set_email_in_sign_in
     if controller_name == 'sessions' and action_name == 'create'
-      user = User.find_by_name(params[:username])
+      user = User.find_by_name(params[:name])
 
       unless user
         head :unauthorized
@@ -112,7 +112,8 @@ class ApplicationController < ActionController::API
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:account_update, keys: [:name])
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :email, :password, :password_confirmation])
+    devise_parameter_sanitizer.permit(:sign_in, keys: [:name, :email, :password])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :email, :password])
   end
 
   def resp(status, json={})
