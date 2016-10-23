@@ -46,6 +46,10 @@
 
 	'use strict';
 
+	var _api = __webpack_require__(37);
+
+	var _api2 = _interopRequireDefault(_api);
+
 	var _vue = __webpack_require__(1);
 
 	var _vue2 = _interopRequireDefault(_vue);
@@ -67,6 +71,8 @@
 	  var routes = [route('/', 'index'), route('/signin', 'signin'), route('/signup', 'signup'), route('/signout', 'signout')];
 	  return new _vueRouter2.default({ routes: routes, mode: 'history' });
 	}
+
+	window.api = new _api2.default(localStorage.getItem('cs-token'));
 
 	window.onload = function (_) {
 	  var router = createRouter();
@@ -9516,7 +9522,7 @@
 
 
 	// module
-	exports.push([module.id, "body {\n  margin: 0;\n  padding: 0;\n  background: #FFFFFF; }\n\nbody[data-page-name=\"signin\"], body[data-page-name=\"signup\"], body[data-page-name=\"signout\"] {\n  background: #B2D9FF; }\n\nbody[data-page-name=\"signin\"] .cs-panel, body[data-page-name=\"signup\"] .cs-panel, body[data-page-name=\"signout\"] .cs-panel {\n  width: 360px;\n  margin: 128px auto; }\n\n.cs-container {\n  padding: 0 32px; }\n\n.cs-page-content {\n  font-size: 18px;\n  font-family: 'Source Sans Pro', sans-serif; }\n\n.cs-margin {\n  margin-top: 36px; }\n\n.cs-center {\n  margin: 0 auto; }\n\n.cs-block-header {\n  color: #6B8FB2; }\n\n.cs-block-body code {\n  display: block;\n  background: #FFE2B2;\n  color: #666666;\n  border: 1px solid #dddddd;\n  padding: 12px; }\n\n.cs-nav {\n  height: 36px;\n  font-size: 18px;\n  padding: 0 32px;\n  background: #FFFFFF; }\n  .cs-nav * {\n    display: inline-block; }\n  .cs-nav, .cs-nav a {\n    color: #666; }\n\n.cs-nav-brand, .cs-nav-list {\n  margin: 0;\n  padding: 0;\n  font-size: 16.74419px;\n  line-height: 36px; }\n\n.cs-nav-list li {\n  display: inline;\n  margin-left: 12px; }\n\n.cs-nav-left {\n  float: left; }\n\n.cs-nav-right {\n  float: right; }\n\n.cs-nav:after {\n  content: '.';\n  clear: both;\n  display: block;\n  height: 0;\n  font-size: 0;\n  visibility: hidden; }\n\n.cs-leading {\n  text-align: center;\n  background: #6B8FB2;\n  border: 0 solid #B2D9FF;\n  border-width: 3px 0;\n  color: #F0F0F0;\n  padding: 32px 0; }\n\n.cs-leading-title {\n  margin: 0;\n  padding: 0;\n  font-size: 32px; }\n\n.cs-leading-header {\n  padding-top: 32px; }\n\n.cs-leading-body {\n  padding: 12px 0; }\n\n.cs-panel {\n  background: #FFFFFF;\n  border: 1px solid #D4D4D4;\n  color: #555; }\n\n.cs-panel-header, .cs-panel-footer {\n  padding: 9px 18px; }\n\n.cs-panel-body {\n  padding: 18px; }\n\n.cs-panel-footer {\n  background: #D4D4D4; }\n  .cs-panel-footer ul {\n    margin: 0;\n    padding: 0;\n    list-style: none;\n    line-height: 27px; }\n\n.cs-panel-title {\n  font-size: 32px;\n  line-height: 64px; }\n\n.cs-panel-desc {\n  font-size: 12px;\n  line-height: 36px; }\n\n.cs-panel-title, .cs-panel-desc {\n  text-align: center; }\n\n.cs-form label {\n  color: #999; }\n\n.cs-form-errors {\n  color: #c66;\n  margin-bottom: 12px; }\n\n.cs-form-control input, .cs-form-control button {\n  box-sizing: border-box;\n  width: 100%;\n  font-weight: normal;\n  height: 36px;\n  line-height: 36px;\n  padding: 0 12px;\n  margin: 12px 0; }\n\n.cs-form-control input {\n  border: 1px solid #D4D4D4; }\n\n.cs-form-control button {\n  cursor: pointer; }\n\n.cs-form-control input, .cs-form-control button {\n  font-size: 18px; }\n\n.cs-button-success {\n  background: #CCEE66;\n  border: 1px solid #BBEE55;\n  color: #336633; }\n\n.cs-page {\n  width: 100%;\n  height: 100%; }\n", ""]);
+	exports.push([module.id, "body {\n  margin: 0;\n  padding: 0;\n  background: #FFFFFF; }\n\nbody[data-page-name=\"signin\"], body[data-page-name=\"signup\"], body[data-page-name=\"signout\"] {\n  background: #B2D9FF; }\n\nbody[data-page-name=\"signin\"] .panel, body[data-page-name=\"signup\"] .panel, body[data-page-name=\"signout\"] .panel {\n  width: 360px;\n  margin: 128px auto; }\n\n.container {\n  padding: 0 32px; }\n\n.page-content {\n  font-size: 18px;\n  font-family: 'Source Sans Pro', sans-serif; }\n\n.cs-margin {\n  margin-top: 36px; }\n\n.cs-center {\n  margin: 0 auto; }\n\n.block-header {\n  color: #6B8FB2; }\n\n.block-body code {\n  display: block;\n  background: #FFE2B2;\n  color: #666666;\n  border: 1px solid #dddddd;\n  padding: 12px; }\n\n.nav {\n  height: 36px;\n  font-size: 18px;\n  padding: 0 32px;\n  background: #FFFFFF; }\n  .nav * {\n    display: inline-block; }\n  .nav, .nav a {\n    color: #666; }\n\n.nav-brand, .nav-list {\n  margin: 0;\n  padding: 0;\n  font-size: 16.74419px;\n  line-height: 36px; }\n\n.nav-list li {\n  display: inline;\n  margin-left: 12px; }\n\n.nav-left {\n  float: left; }\n\n.nav-right {\n  float: right; }\n\n.nav:after {\n  content: '.';\n  clear: both;\n  display: block;\n  height: 0;\n  font-size: 0;\n  visibility: hidden; }\n\n.leading {\n  text-align: center;\n  background: #6B8FB2;\n  border: 0 solid #B2D9FF;\n  border-width: 3px 0;\n  color: #F0F0F0;\n  padding: 32px 0; }\n\n.leading-title {\n  margin: 0;\n  padding: 0;\n  font-size: 32px; }\n\n.leading-header {\n  padding-top: 32px; }\n\n.leading-body {\n  padding: 12px 0; }\n\n.panel {\n  background: #FFFFFF;\n  border: 1px solid #D4D4D4;\n  color: #555; }\n\n.panel-header, .panel-footer {\n  padding: 9px 18px; }\n\n.panel-body {\n  padding: 18px; }\n\n.panel-footer {\n  background: #D4D4D4; }\n  .panel-footer ul {\n    margin: 0;\n    padding: 0;\n    list-style: none;\n    line-height: 27px; }\n\n.panel-title {\n  font-size: 32px;\n  line-height: 64px; }\n\n.panel-desc {\n  font-size: 12px;\n  line-height: 36px; }\n\n.panel-title, .panel-desc {\n  text-align: center; }\n\n.form label {\n  color: #999; }\n\n.form-errors {\n  color: #c66;\n  margin-bottom: 12px; }\n\n.form-control input, .form-control button {\n  box-sizing: border-box;\n  width: 100%;\n  font-weight: normal;\n  height: 36px;\n  line-height: 36px;\n  padding: 0 12px;\n  margin: 12px 0; }\n\n.form-control input {\n  border: 1px solid #D4D4D4; }\n\n.form-control button {\n  cursor: pointer; }\n\n.form-control input, .form-control button {\n  font-size: 18px; }\n\n.button-success {\n  background: #CCEE66;\n  border: 1px solid #BBEE55;\n  color: #336633; }\n\n.page {\n  width: 100%;\n  height: 100%; }\n", ""]);
 
 	// exports
 
@@ -9836,8 +9842,8 @@
 	var map = {
 		"./index.vue": 8,
 		"./signin.vue": 16,
-		"./signout.vue": 26,
-		"./signup.vue": 30
+		"./signout.vue": 30,
+		"./signup.vue": 33
 	};
 	function webpackContext(req) {
 		return __webpack_require__(webpackContextResolve(req));
@@ -9878,10 +9884,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/home/ubuntu/workspace/cs-mgmt/frontend/app/views/index.vue"
+	__vue_options__.__file = "/home/ubuntu/workspace/cs-mgmt/frontend/app/pages/index.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-284f12fa"
+	__vue_options__._scopeId = "data-v-50c4b4d0"
 
 	/* hot reload */
 	if (false) {(function () {
@@ -9890,9 +9896,9 @@
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-284f12fa", __vue_options__)
+	    hotAPI.createRecord("data-v-50c4b4d0", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-284f12fa", __vue_options__)
+	    hotAPI.reload("data-v-50c4b4d0", __vue_options__)
 	  }
 	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] index.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -9916,8 +9922,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-284f12fa&scoped=true!./../../node_modules/sass-loader/index.js?indentedSyntax!./../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./index.vue", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-284f12fa&scoped=true!./../../node_modules/sass-loader/index.js?indentedSyntax!./../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./index.vue");
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-50c4b4d0&scoped=true!./../../node_modules/sass-loader/index.js?indentedSyntax!./../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./index.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-50c4b4d0&scoped=true!./../../node_modules/sass-loader/index.js?indentedSyntax!./../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./index.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -9935,7 +9941,7 @@
 
 
 	// module
-	exports.push([module.id, "\n.cs-block[data-v-284f12fa] {\n  margin-bottom: 32px;\n}\n", ""]);
+	exports.push([module.id, "\n.block[data-v-50c4b4d0] {\n  margin-bottom: 32px;\n}\n", ""]);
 
 	// exports
 
@@ -9995,9 +10001,7 @@
 	//
 
 	exports.default = {
-	  components: {
-	    navbar: __webpack_require__(12)
-	  }
+	  components: { navbar: __webpack_require__(12) }
 	};
 
 /***/ },
@@ -10022,7 +10026,7 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/home/ubuntu/workspace/cs-mgmt/frontend/app/lib/components/navbar.vue"
+	__vue_options__.__file = "/home/ubuntu/workspace/cs-mgmt/frontend/app/components/navbar.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 
@@ -10033,9 +10037,9 @@
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-c3590e30", __vue_options__)
+	    hotAPI.createRecord("data-v-29b0151c", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-c3590e30", __vue_options__)
+	    hotAPI.reload("data-v-29b0151c", __vue_options__)
 	  }
 	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] navbar.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -10100,21 +10104,21 @@
 
 	module.exports={render:function (){with(this) {
 	  return _h('div', {
-	    staticClass: "cs-navbar"
+	    staticClass: "navbar"
 	  }, [(currentUser()) ? _h('div', {
-	    staticClass: "cs-nav"
+	    staticClass: "nav"
 	  }, [_h('div', {
-	    staticClass: "cs-nav-left"
+	    staticClass: "nav-left"
 	  }, [_h('h1', {
-	    staticClass: "cs-nav-brand"
+	    staticClass: "nav-brand"
 	  }, [_h('router-link', {
 	    attrs: {
 	      "to": "/"
 	    }
 	  }, ["codestand.io"])])]), _h('div', {
-	    staticClass: "cs-nav-right"
+	    staticClass: "nav-right"
 	  }, [_h('ul', {
-	    staticClass: "cs-nav-list"
+	    staticClass: "nav-list"
 	  }, [_h('li', [_h('router-link', {
 	    attrs: {
 	      "to": "/"
@@ -10132,19 +10136,19 @@
 	      "to": "/signout"
 	    }
 	  }, ["Sign out"])])])])]) : _h('div', {
-	    staticClass: "cs-nav"
+	    staticClass: "nav"
 	  }, [_h('div', {
-	    staticClass: "cs-nav-left"
+	    staticClass: "nav-left"
 	  }, [_h('h1', {
-	    staticClass: "cs-nav-brand"
+	    staticClass: "nav-brand"
 	  }, [_h('router-link', {
 	    attrs: {
 	      "to": "/"
 	    }
 	  }, ["codestand.io"])])]), _h('div', {
-	    staticClass: "cs-nav-right"
+	    staticClass: "nav-right"
 	  }, [_h('ul', {
-	    staticClass: "cs-nav-list"
+	    staticClass: "nav-list"
 	  }, [_h('li', [_h('router-link', {
 	    attrs: {
 	      "to": "/signin"
@@ -10158,7 +10162,7 @@
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-c3590e30", module.exports)
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-29b0151c", module.exports)
 	  }
 	}
 
@@ -10168,51 +10172,51 @@
 
 	module.exports={render:function (){with(this) {
 	  return _h('div', {
-	    staticClass: "cs-page"
+	    staticClass: "page"
 	  }, [_h('navbar'), _m(0), _m(1)])
 	}},staticRenderFns: [function (){with(this) {
 	  return _h('div', {
-	    staticClass: "cs-leading"
+	    staticClass: "leading"
 	  }, [_h('div', {
-	    staticClass: "cs-leading-header"
+	    staticClass: "leading-header"
 	  }, [_h('h1', {
-	    staticClass: "cs-leading-title"
+	    staticClass: "leading-title"
 	  }, ["Welcome to codestand.io"])]), _h('div', {
-	    staticClass: "cs-leading-body"
+	    staticClass: "leading-body"
 	  }, [_h('p', ["Getting started with codestand.io."])])])
 	}},function (){with(this) {
 	  return _h('div', {
-	    staticClass: "cs-container"
+	    staticClass: "container"
 	  }, [_h('div', {
-	    staticClass: "cs-block"
+	    staticClass: "block"
 	  }, [_h('h2', {
-	    staticClass: "cs-block-header"
+	    staticClass: "block-header"
 	  }, ["1. Install CLI toolchain"]), _h('div', {
-	    staticClass: "cs-block-body"
+	    staticClass: "block-body"
 	  }, [_h('h3', ["Mac OSX"]), _h('code', ["$ brew install codestand/codestand/codestand"])])]), _h('div', {
-	    staticClass: "cs-block"
+	    staticClass: "block"
 	  }, [_h('h2', {
-	    staticClass: "cs-block-header"
+	    staticClass: "block-header"
 	  }, ["2. Create and register your app"]), _h('div', {
-	    staticClass: "cs-block-body"
+	    staticClass: "block-body"
 	  }, [_h('code', ["$ codestand new --register led-blink"])])]), _h('div', {
-	    staticClass: "cs-block"
+	    staticClass: "block"
 	  }, [_h('h2', {
-	    staticClass: "cs-block-header"
+	    staticClass: "block-header"
 	  }, ["3. Link your device to the codestand.io"]), _h('div', {
-	    staticClass: "cs-block-body"
+	    staticClass: "block-body"
 	  }, [_h('code', ["$ codestand install"])])]), _h('div', {
-	    staticClass: "cs-block"
+	    staticClass: "block"
 	  }, [_h('h2', {
-	    staticClass: "cs-block-header"
+	    staticClass: "block-header"
 	  }, ["4. Deploy the app to the device"]), _h('div', {
-	    staticClass: "cs-block-body"
+	    staticClass: "block-body"
 	  }, [_h('code', ["$ codestand deploy"])])])])
 	}}]}
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-284f12fa", module.exports)
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-50c4b4d0", module.exports)
 	  }
 	}
 
@@ -10226,7 +10230,7 @@
 	__vue_exports__ = __webpack_require__(17)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(25)
+	var __vue_template__ = __webpack_require__(29)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -10238,7 +10242,7 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/home/ubuntu/workspace/cs-mgmt/frontend/app/views/signin.vue"
+	__vue_options__.__file = "/home/ubuntu/workspace/cs-mgmt/frontend/app/pages/signin.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 
@@ -10249,9 +10253,9 @@
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-f6b8baac", __vue_options__)
+	    hotAPI.createRecord("data-v-6ae23b94", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-f6b8baac", __vue_options__)
+	    hotAPI.reload("data-v-6ae23b94", __vue_options__)
 	  }
 	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] signin.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -10268,38 +10272,47 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
+
+	var _superagent = __webpack_require__(20);
+
+	var _superagent2 = _interopRequireDefault(_superagent);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	exports.default = {
 	  name: 'signin',
-	  props: ['user-session-path'],
 	  components: { 'userform': __webpack_require__(18) },
 	  data: function data() {
 	    return {
-	      formSuccessCallback: function formSuccessCallback(xhr) {
-	        localStorage.setItem('cs-token', xhr.getResponseHeader('token'));
-	        localStorage.setItem('cs-username', xhr.getResponseHeader('username'));
-	        this.$router.push('/');
-	      },
-
 	      formInputs: [{ name: 'username', type: 'text', placeholder: 'username' }, { name: 'password', type: 'password', placeholder: 'password' }]
 	    };
+	  },
+	  methods: {
+	    formSubmit: function formSubmit(user) {
+	      var _this = this;
+
+	      return api.signin(user).then(function (res) {
+	        localStorage.setItem('cs-token', api.token = res.headers['token']);
+	        localStorage.setItem('cs-username', res.headers['username']);
+	        _this.$router.push('/');
+	      });
+	    }
 	  }
-	};
+	}; //
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
 
 /***/ },
 /* 18 */
@@ -10311,7 +10324,7 @@
 	__vue_exports__ = __webpack_require__(19)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(24)
+	var __vue_template__ = __webpack_require__(28)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -10323,7 +10336,7 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/home/ubuntu/workspace/cs-mgmt/frontend/app/lib/components/userform.vue"
+	__vue_options__.__file = "/home/ubuntu/workspace/cs-mgmt/frontend/app/components/userform.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 
@@ -10334,9 +10347,9 @@
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-26655f32", __vue_options__)
+	    hotAPI.createRecord("data-v-5674d271", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-26655f32", __vue_options__)
+	    hotAPI.reload("data-v-5674d271", __vue_options__)
 	  }
 	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] userform.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -10353,21 +10366,30 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-
-	var _request = __webpack_require__(20);
-
-	var _request2 = _interopRequireDefault(_request);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
 
 	exports.default = {
 	  name: 'userform',
-	  components: { userformInput: __webpack_require__(21) },
-	  props: ['success-callback', 'first-state', 'method', 'action', 'inputs'],
+	  components: { userformInput: __webpack_require__(25) },
+	  props: ['on-submit', 'first-state', 'inputs'],
 	  data: function data() {
 	    return {
 	      state: this.firstState,
-	      errors: {}
+	      inputErrors: {},
+	      serverErrors: {}
 	    };
 	  },
 
@@ -10375,88 +10397,1617 @@
 	    submit: function submit() {
 	      var _this = this;
 
-	      var success = function success(xhr) {
-	        _this.state = 'Welcome';
-	        if (_this.successCallback) _this.$root.$router.push(_this.successCallback);
-	        if (_this.$parent.formSuccessCallback) _this.$parent.formSuccessCallback(xhr);
-	      };
-
-	      var fail = function fail(xhr) {
-	        var res = xhr.response;
-	        if (res && res.status === 'error') {
-	          _this.errors = res.errors;
-	        } else {
-	          _this.errors = { msg: xhr.statusText };
-	        }
-	        _this.state = 'Retry';
-	      };
-
-	      this.state = 'Processing now...';
-	      var values = this.inputs.reduce(function (v, i) {
+	      this.state = 'Processing...';
+	      this.onSubmit(this.inputs.reduce(function (v, i) {
 	        v[i.name] = i.value;return v;
-	      }, {});
-	      _request2.default.sendJSON(this.method, this.action, values).then(success, fail);
+	      }, {})).then(function (res) {
+	        _this.state = 'OK';
+	      }, function (res) {
+	        _this.inputErrors = res.body && res.body.errors || {};
+	        _this.serverErrors = { status: res.statusText };
+	        _this.state = 'Retry';
+	      });
 	    }
 	  }
-	}; //
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
+	};
 
 /***/ },
 /* 20 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	/**
+	 * Root reference for iframes.
+	 */
 
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.default = {
-	  sendJSON: function sendJSON(method, url, data, opts) {
-	    return new Promise(function (resolve, reject) {
-	      var xhr = new XMLHttpRequest();
-	      xhr.onreadystatechange = function (_) {
-	        if (xhr.readyState == 4) {
-	          if (xhr.status == 200) {
-	            resolve(xhr);
-	          } else {
-	            reject(xhr);
-	          }
-	        }
-	      };
-	      xhr.open(method, url, true);
-	      xhr.setRequestHeader('Content-Type', 'application/json; charset=utf-8');
-	      if (opts && opts.headers) Object.keys(opts.headers).forEach(function (header) {
-	        return xhr.setRequestHeader(header, opts.headers[header]);
+	var root;
+	if (typeof window !== 'undefined') { // Browser window
+	  root = window;
+	} else if (typeof self !== 'undefined') { // Web Worker
+	  root = self;
+	} else { // Other environments
+	  console.warn("Using browser-only version of superagent in non-browser environment");
+	  root = this;
+	}
+
+	var Emitter = __webpack_require__(21);
+	var requestBase = __webpack_require__(22);
+	var isObject = __webpack_require__(23);
+
+	/**
+	 * Noop.
+	 */
+
+	function noop(){};
+
+	/**
+	 * Expose `request`.
+	 */
+
+	var request = module.exports = __webpack_require__(24).bind(null, Request);
+
+	/**
+	 * Determine XHR.
+	 */
+
+	request.getXHR = function () {
+	  if (root.XMLHttpRequest
+	      && (!root.location || 'file:' != root.location.protocol
+	          || !root.ActiveXObject)) {
+	    return new XMLHttpRequest;
+	  } else {
+	    try { return new ActiveXObject('Microsoft.XMLHTTP'); } catch(e) {}
+	    try { return new ActiveXObject('Msxml2.XMLHTTP.6.0'); } catch(e) {}
+	    try { return new ActiveXObject('Msxml2.XMLHTTP.3.0'); } catch(e) {}
+	    try { return new ActiveXObject('Msxml2.XMLHTTP'); } catch(e) {}
+	  }
+	  throw Error("Browser-only verison of superagent could not find XHR");
+	};
+
+	/**
+	 * Removes leading and trailing whitespace, added to support IE.
+	 *
+	 * @param {String} s
+	 * @return {String}
+	 * @api private
+	 */
+
+	var trim = ''.trim
+	  ? function(s) { return s.trim(); }
+	  : function(s) { return s.replace(/(^\s*|\s*$)/g, ''); };
+
+	/**
+	 * Serialize the given `obj`.
+	 *
+	 * @param {Object} obj
+	 * @return {String}
+	 * @api private
+	 */
+
+	function serialize(obj) {
+	  if (!isObject(obj)) return obj;
+	  var pairs = [];
+	  for (var key in obj) {
+	    pushEncodedKeyValuePair(pairs, key, obj[key]);
+	  }
+	  return pairs.join('&');
+	}
+
+	/**
+	 * Helps 'serialize' with serializing arrays.
+	 * Mutates the pairs array.
+	 *
+	 * @param {Array} pairs
+	 * @param {String} key
+	 * @param {Mixed} val
+	 */
+
+	function pushEncodedKeyValuePair(pairs, key, val) {
+	  if (val != null) {
+	    if (Array.isArray(val)) {
+	      val.forEach(function(v) {
+	        pushEncodedKeyValuePair(pairs, key, v);
 	      });
-	      xhr.responseType = 'json';
-	      xhr.send(data ? JSON.stringify(data) : null);
-	    });
-	  },
-	  getJSON: function getJSON(url, opts) {
-	    return this.sendJSON('GET', url, null, opts);
+	    } else if (isObject(val)) {
+	      for(var subkey in val) {
+	        pushEncodedKeyValuePair(pairs, key + '[' + subkey + ']', val[subkey]);
+	      }
+	    } else {
+	      pairs.push(encodeURIComponent(key)
+	        + '=' + encodeURIComponent(val));
+	    }
+	  } else if (val === null) {
+	    pairs.push(encodeURIComponent(key));
+	  }
+	}
+
+	/**
+	 * Expose serialization method.
+	 */
+
+	 request.serializeObject = serialize;
+
+	 /**
+	  * Parse the given x-www-form-urlencoded `str`.
+	  *
+	  * @param {String} str
+	  * @return {Object}
+	  * @api private
+	  */
+
+	function parseString(str) {
+	  var obj = {};
+	  var pairs = str.split('&');
+	  var pair;
+	  var pos;
+
+	  for (var i = 0, len = pairs.length; i < len; ++i) {
+	    pair = pairs[i];
+	    pos = pair.indexOf('=');
+	    if (pos == -1) {
+	      obj[decodeURIComponent(pair)] = '';
+	    } else {
+	      obj[decodeURIComponent(pair.slice(0, pos))] =
+	        decodeURIComponent(pair.slice(pos + 1));
+	    }
+	  }
+
+	  return obj;
+	}
+
+	/**
+	 * Expose parser.
+	 */
+
+	request.parseString = parseString;
+
+	/**
+	 * Default MIME type map.
+	 *
+	 *     superagent.types.xml = 'application/xml';
+	 *
+	 */
+
+	request.types = {
+	  html: 'text/html',
+	  json: 'application/json',
+	  xml: 'application/xml',
+	  urlencoded: 'application/x-www-form-urlencoded',
+	  'form': 'application/x-www-form-urlencoded',
+	  'form-data': 'application/x-www-form-urlencoded'
+	};
+
+	/**
+	 * Default serialization map.
+	 *
+	 *     superagent.serialize['application/xml'] = function(obj){
+	 *       return 'generated xml here';
+	 *     };
+	 *
+	 */
+
+	 request.serialize = {
+	   'application/x-www-form-urlencoded': serialize,
+	   'application/json': JSON.stringify
+	 };
+
+	 /**
+	  * Default parsers.
+	  *
+	  *     superagent.parse['application/xml'] = function(str){
+	  *       return { object parsed from str };
+	  *     };
+	  *
+	  */
+
+	request.parse = {
+	  'application/x-www-form-urlencoded': parseString,
+	  'application/json': JSON.parse
+	};
+
+	/**
+	 * Parse the given header `str` into
+	 * an object containing the mapped fields.
+	 *
+	 * @param {String} str
+	 * @return {Object}
+	 * @api private
+	 */
+
+	function parseHeader(str) {
+	  var lines = str.split(/\r?\n/);
+	  var fields = {};
+	  var index;
+	  var line;
+	  var field;
+	  var val;
+
+	  lines.pop(); // trailing CRLF
+
+	  for (var i = 0, len = lines.length; i < len; ++i) {
+	    line = lines[i];
+	    index = line.indexOf(':');
+	    field = line.slice(0, index).toLowerCase();
+	    val = trim(line.slice(index + 1));
+	    fields[field] = val;
+	  }
+
+	  return fields;
+	}
+
+	/**
+	 * Check if `mime` is json or has +json structured syntax suffix.
+	 *
+	 * @param {String} mime
+	 * @return {Boolean}
+	 * @api private
+	 */
+
+	function isJSON(mime) {
+	  return /[\/+]json\b/.test(mime);
+	}
+
+	/**
+	 * Return the mime type for the given `str`.
+	 *
+	 * @param {String} str
+	 * @return {String}
+	 * @api private
+	 */
+
+	function type(str){
+	  return str.split(/ *; */).shift();
+	};
+
+	/**
+	 * Return header field parameters.
+	 *
+	 * @param {String} str
+	 * @return {Object}
+	 * @api private
+	 */
+
+	function params(str){
+	  return str.split(/ *; */).reduce(function(obj, str){
+	    var parts = str.split(/ *= */),
+	        key = parts.shift(),
+	        val = parts.shift();
+
+	    if (key && val) obj[key] = val;
+	    return obj;
+	  }, {});
+	};
+
+	/**
+	 * Initialize a new `Response` with the given `xhr`.
+	 *
+	 *  - set flags (.ok, .error, etc)
+	 *  - parse header
+	 *
+	 * Examples:
+	 *
+	 *  Aliasing `superagent` as `request` is nice:
+	 *
+	 *      request = superagent;
+	 *
+	 *  We can use the promise-like API, or pass callbacks:
+	 *
+	 *      request.get('/').end(function(res){});
+	 *      request.get('/', function(res){});
+	 *
+	 *  Sending data can be chained:
+	 *
+	 *      request
+	 *        .post('/user')
+	 *        .send({ name: 'tj' })
+	 *        .end(function(res){});
+	 *
+	 *  Or passed to `.send()`:
+	 *
+	 *      request
+	 *        .post('/user')
+	 *        .send({ name: 'tj' }, function(res){});
+	 *
+	 *  Or passed to `.post()`:
+	 *
+	 *      request
+	 *        .post('/user', { name: 'tj' })
+	 *        .end(function(res){});
+	 *
+	 * Or further reduced to a single call for simple cases:
+	 *
+	 *      request
+	 *        .post('/user', { name: 'tj' }, function(res){});
+	 *
+	 * @param {XMLHTTPRequest} xhr
+	 * @param {Object} options
+	 * @api private
+	 */
+
+	function Response(req, options) {
+	  options = options || {};
+	  this.req = req;
+	  this.xhr = this.req.xhr;
+	  // responseText is accessible only if responseType is '' or 'text' and on older browsers
+	  this.text = ((this.req.method !='HEAD' && (this.xhr.responseType === '' || this.xhr.responseType === 'text')) || typeof this.xhr.responseType === 'undefined')
+	     ? this.xhr.responseText
+	     : null;
+	  this.statusText = this.req.xhr.statusText;
+	  this._setStatusProperties(this.xhr.status);
+	  this.header = this.headers = parseHeader(this.xhr.getAllResponseHeaders());
+	  // getAllResponseHeaders sometimes falsely returns "" for CORS requests, but
+	  // getResponseHeader still works. so we get content-type even if getting
+	  // other headers fails.
+	  this.header['content-type'] = this.xhr.getResponseHeader('content-type');
+	  this._setHeaderProperties(this.header);
+	  this.body = this.req.method != 'HEAD'
+	    ? this._parseBody(this.text ? this.text : this.xhr.response)
+	    : null;
+	}
+
+	/**
+	 * Get case-insensitive `field` value.
+	 *
+	 * @param {String} field
+	 * @return {String}
+	 * @api public
+	 */
+
+	Response.prototype.get = function(field){
+	  return this.header[field.toLowerCase()];
+	};
+
+	/**
+	 * Set header related properties:
+	 *
+	 *   - `.type` the content type without params
+	 *
+	 * A response of "Content-Type: text/plain; charset=utf-8"
+	 * will provide you with a `.type` of "text/plain".
+	 *
+	 * @param {Object} header
+	 * @api private
+	 */
+
+	Response.prototype._setHeaderProperties = function(header){
+	  // content-type
+	  var ct = this.header['content-type'] || '';
+	  this.type = type(ct);
+
+	  // params
+	  var obj = params(ct);
+	  for (var key in obj) this[key] = obj[key];
+	};
+
+	/**
+	 * Parse the given body `str`.
+	 *
+	 * Used for auto-parsing of bodies. Parsers
+	 * are defined on the `superagent.parse` object.
+	 *
+	 * @param {String} str
+	 * @return {Mixed}
+	 * @api private
+	 */
+
+	Response.prototype._parseBody = function(str){
+	  var parse = request.parse[this.type];
+	  if (!parse && isJSON(this.type)) {
+	    parse = request.parse['application/json'];
+	  }
+	  return parse && str && (str.length || str instanceof Object)
+	    ? parse(str)
+	    : null;
+	};
+
+	/**
+	 * Set flags such as `.ok` based on `status`.
+	 *
+	 * For example a 2xx response will give you a `.ok` of __true__
+	 * whereas 5xx will be __false__ and `.error` will be __true__. The
+	 * `.clientError` and `.serverError` are also available to be more
+	 * specific, and `.statusType` is the class of error ranging from 1..5
+	 * sometimes useful for mapping respond colors etc.
+	 *
+	 * "sugar" properties are also defined for common cases. Currently providing:
+	 *
+	 *   - .noContent
+	 *   - .badRequest
+	 *   - .unauthorized
+	 *   - .notAcceptable
+	 *   - .notFound
+	 *
+	 * @param {Number} status
+	 * @api private
+	 */
+
+	Response.prototype._setStatusProperties = function(status){
+	  // handle IE9 bug: http://stackoverflow.com/questions/10046972/msie-returns-status-code-of-1223-for-ajax-request
+	  if (status === 1223) {
+	    status = 204;
+	  }
+
+	  var type = status / 100 | 0;
+
+	  // status / class
+	  this.status = this.statusCode = status;
+	  this.statusType = type;
+
+	  // basics
+	  this.info = 1 == type;
+	  this.ok = 2 == type;
+	  this.clientError = 4 == type;
+	  this.serverError = 5 == type;
+	  this.error = (4 == type || 5 == type)
+	    ? this.toError()
+	    : false;
+
+	  // sugar
+	  this.accepted = 202 == status;
+	  this.noContent = 204 == status;
+	  this.badRequest = 400 == status;
+	  this.unauthorized = 401 == status;
+	  this.notAcceptable = 406 == status;
+	  this.notFound = 404 == status;
+	  this.forbidden = 403 == status;
+	};
+
+	/**
+	 * Return an `Error` representative of this response.
+	 *
+	 * @return {Error}
+	 * @api public
+	 */
+
+	Response.prototype.toError = function(){
+	  var req = this.req;
+	  var method = req.method;
+	  var url = req.url;
+
+	  var msg = 'cannot ' + method + ' ' + url + ' (' + this.status + ')';
+	  var err = new Error(msg);
+	  err.status = this.status;
+	  err.method = method;
+	  err.url = url;
+
+	  return err;
+	};
+
+	/**
+	 * Expose `Response`.
+	 */
+
+	request.Response = Response;
+
+	/**
+	 * Initialize a new `Request` with the given `method` and `url`.
+	 *
+	 * @param {String} method
+	 * @param {String} url
+	 * @api public
+	 */
+
+	function Request(method, url) {
+	  var self = this;
+	  this._query = this._query || [];
+	  this.method = method;
+	  this.url = url;
+	  this.header = {}; // preserves header name case
+	  this._header = {}; // coerces header names to lowercase
+	  this.on('end', function(){
+	    var err = null;
+	    var res = null;
+
+	    try {
+	      res = new Response(self);
+	    } catch(e) {
+	      err = new Error('Parser is unable to parse the response');
+	      err.parse = true;
+	      err.original = e;
+	      // issue #675: return the raw response if the response parsing fails
+	      err.rawResponse = self.xhr && self.xhr.responseText ? self.xhr.responseText : null;
+	      // issue #876: return the http status code if the response parsing fails
+	      err.statusCode = self.xhr && self.xhr.status ? self.xhr.status : null;
+	      return self.callback(err);
+	    }
+
+	    self.emit('response', res);
+
+	    var new_err;
+	    try {
+	      if (res.status < 200 || res.status >= 300) {
+	        new_err = new Error(res.statusText || 'Unsuccessful HTTP response');
+	        new_err.original = err;
+	        new_err.response = res;
+	        new_err.status = res.status;
+	      }
+	    } catch(e) {
+	      new_err = e; // #985 touching res may cause INVALID_STATE_ERR on old Android
+	    }
+
+	    // #1000 don't catch errors from the callback to avoid double calling it
+	    if (new_err) {
+	      self.callback(new_err, res);
+	    } else {
+	      self.callback(null, res);
+	    }
+	  });
+	}
+
+	/**
+	 * Mixin `Emitter` and `requestBase`.
+	 */
+
+	Emitter(Request.prototype);
+	for (var key in requestBase) {
+	  Request.prototype[key] = requestBase[key];
+	}
+
+	/**
+	 * Set Content-Type to `type`, mapping values from `request.types`.
+	 *
+	 * Examples:
+	 *
+	 *      superagent.types.xml = 'application/xml';
+	 *
+	 *      request.post('/')
+	 *        .type('xml')
+	 *        .send(xmlstring)
+	 *        .end(callback);
+	 *
+	 *      request.post('/')
+	 *        .type('application/xml')
+	 *        .send(xmlstring)
+	 *        .end(callback);
+	 *
+	 * @param {String} type
+	 * @return {Request} for chaining
+	 * @api public
+	 */
+
+	Request.prototype.type = function(type){
+	  this.set('Content-Type', request.types[type] || type);
+	  return this;
+	};
+
+	/**
+	 * Set responseType to `val`. Presently valid responseTypes are 'blob' and
+	 * 'arraybuffer'.
+	 *
+	 * Examples:
+	 *
+	 *      req.get('/')
+	 *        .responseType('blob')
+	 *        .end(callback);
+	 *
+	 * @param {String} val
+	 * @return {Request} for chaining
+	 * @api public
+	 */
+
+	Request.prototype.responseType = function(val){
+	  this._responseType = val;
+	  return this;
+	};
+
+	/**
+	 * Set Accept to `type`, mapping values from `request.types`.
+	 *
+	 * Examples:
+	 *
+	 *      superagent.types.json = 'application/json';
+	 *
+	 *      request.get('/agent')
+	 *        .accept('json')
+	 *        .end(callback);
+	 *
+	 *      request.get('/agent')
+	 *        .accept('application/json')
+	 *        .end(callback);
+	 *
+	 * @param {String} accept
+	 * @return {Request} for chaining
+	 * @api public
+	 */
+
+	Request.prototype.accept = function(type){
+	  this.set('Accept', request.types[type] || type);
+	  return this;
+	};
+
+	/**
+	 * Set Authorization field value with `user` and `pass`.
+	 *
+	 * @param {String} user
+	 * @param {String} pass
+	 * @param {Object} options with 'type' property 'auto' or 'basic' (default 'basic')
+	 * @return {Request} for chaining
+	 * @api public
+	 */
+
+	Request.prototype.auth = function(user, pass, options){
+	  if (!options) {
+	    options = {
+	      type: 'basic'
+	    }
+	  }
+
+	  switch (options.type) {
+	    case 'basic':
+	      var str = btoa(user + ':' + pass);
+	      this.set('Authorization', 'Basic ' + str);
+	    break;
+
+	    case 'auto':
+	      this.username = user;
+	      this.password = pass;
+	    break;
+	  }
+	  return this;
+	};
+
+	/**
+	* Add query-string `val`.
+	*
+	* Examples:
+	*
+	*   request.get('/shoes')
+	*     .query('size=10')
+	*     .query({ color: 'blue' })
+	*
+	* @param {Object|String} val
+	* @return {Request} for chaining
+	* @api public
+	*/
+
+	Request.prototype.query = function(val){
+	  if ('string' != typeof val) val = serialize(val);
+	  if (val) this._query.push(val);
+	  return this;
+	};
+
+	/**
+	 * Queue the given `file` as an attachment to the specified `field`,
+	 * with optional `filename`.
+	 *
+	 * ``` js
+	 * request.post('/upload')
+	 *   .attach('content', new Blob(['<a id="a"><b id="b">hey!</b></a>'], { type: "text/html"}))
+	 *   .end(callback);
+	 * ```
+	 *
+	 * @param {String} field
+	 * @param {Blob|File} file
+	 * @param {String} filename
+	 * @return {Request} for chaining
+	 * @api public
+	 */
+
+	Request.prototype.attach = function(field, file, filename){
+	  this._getFormData().append(field, file, filename || file.name);
+	  return this;
+	};
+
+	Request.prototype._getFormData = function(){
+	  if (!this._formData) {
+	    this._formData = new root.FormData();
+	  }
+	  return this._formData;
+	};
+
+	/**
+	 * Invoke the callback with `err` and `res`
+	 * and handle arity check.
+	 *
+	 * @param {Error} err
+	 * @param {Response} res
+	 * @api private
+	 */
+
+	Request.prototype.callback = function(err, res){
+	  var fn = this._callback;
+	  this.clearTimeout();
+	  fn(err, res);
+	};
+
+	/**
+	 * Invoke callback with x-domain error.
+	 *
+	 * @api private
+	 */
+
+	Request.prototype.crossDomainError = function(){
+	  var err = new Error('Request has been terminated\nPossible causes: the network is offline, Origin is not allowed by Access-Control-Allow-Origin, the page is being unloaded, etc.');
+	  err.crossDomain = true;
+
+	  err.status = this.status;
+	  err.method = this.method;
+	  err.url = this.url;
+
+	  this.callback(err);
+	};
+
+	/**
+	 * Invoke callback with timeout error.
+	 *
+	 * @api private
+	 */
+
+	Request.prototype._timeoutError = function(){
+	  var timeout = this._timeout;
+	  var err = new Error('timeout of ' + timeout + 'ms exceeded');
+	  err.timeout = timeout;
+	  this.callback(err);
+	};
+
+	/**
+	 * Compose querystring to append to req.url
+	 *
+	 * @api private
+	 */
+
+	Request.prototype._appendQueryString = function(){
+	  var query = this._query.join('&');
+	  if (query) {
+	    this.url += ~this.url.indexOf('?')
+	      ? '&' + query
+	      : '?' + query;
 	  }
 	};
+
+	/**
+	 * Initiate request, invoking callback `fn(res)`
+	 * with an instanceof `Response`.
+	 *
+	 * @param {Function} fn
+	 * @return {Request} for chaining
+	 * @api public
+	 */
+
+	Request.prototype.end = function(fn){
+	  var self = this;
+	  var xhr = this.xhr = request.getXHR();
+	  var timeout = this._timeout;
+	  var data = this._formData || this._data;
+
+	  // store callback
+	  this._callback = fn || noop;
+
+	  // state change
+	  xhr.onreadystatechange = function(){
+	    if (4 != xhr.readyState) return;
+
+	    // In IE9, reads to any property (e.g. status) off of an aborted XHR will
+	    // result in the error "Could not complete the operation due to error c00c023f"
+	    var status;
+	    try { status = xhr.status } catch(e) { status = 0; }
+
+	    if (0 == status) {
+	      if (self.timedout) return self._timeoutError();
+	      if (self._aborted) return;
+	      return self.crossDomainError();
+	    }
+	    self.emit('end');
+	  };
+
+	  // progress
+	  var handleProgress = function(direction, e) {
+	    if (e.total > 0) {
+	      e.percent = e.loaded / e.total * 100;
+	    }
+	    e.direction = direction;
+	    self.emit('progress', e);
+	  }
+	  if (this.hasListeners('progress')) {
+	    try {
+	      xhr.onprogress = handleProgress.bind(null, 'download');
+	      if (xhr.upload) {
+	        xhr.upload.onprogress = handleProgress.bind(null, 'upload');
+	      }
+	    } catch(e) {
+	      // Accessing xhr.upload fails in IE from a web worker, so just pretend it doesn't exist.
+	      // Reported here:
+	      // https://connect.microsoft.com/IE/feedback/details/837245/xmlhttprequest-upload-throws-invalid-argument-when-used-from-web-worker-context
+	    }
+	  }
+
+	  // timeout
+	  if (timeout && !this._timer) {
+	    this._timer = setTimeout(function(){
+	      self.timedout = true;
+	      self.abort();
+	    }, timeout);
+	  }
+
+	  // querystring
+	  this._appendQueryString();
+
+	  // initiate request
+	  if (this.username && this.password) {
+	    xhr.open(this.method, this.url, true, this.username, this.password);
+	  } else {
+	    xhr.open(this.method, this.url, true);
+	  }
+
+	  // CORS
+	  if (this._withCredentials) xhr.withCredentials = true;
+
+	  // body
+	  if ('GET' != this.method && 'HEAD' != this.method && 'string' != typeof data && !this._isHost(data)) {
+	    // serialize stuff
+	    var contentType = this._header['content-type'];
+	    var serialize = this._serializer || request.serialize[contentType ? contentType.split(';')[0] : ''];
+	    if (!serialize && isJSON(contentType)) serialize = request.serialize['application/json'];
+	    if (serialize) data = serialize(data);
+	  }
+
+	  // set header fields
+	  for (var field in this.header) {
+	    if (null == this.header[field]) continue;
+	    xhr.setRequestHeader(field, this.header[field]);
+	  }
+
+	  if (this._responseType) {
+	    xhr.responseType = this._responseType;
+	  }
+
+	  // send stuff
+	  this.emit('request', this);
+
+	  // IE11 xhr.send(undefined) sends 'undefined' string as POST payload (instead of nothing)
+	  // We need null here if data is undefined
+	  xhr.send(typeof data !== 'undefined' ? data : null);
+	  return this;
+	};
+
+
+	/**
+	 * Expose `Request`.
+	 */
+
+	request.Request = Request;
+
+	/**
+	 * GET `url` with optional callback `fn(res)`.
+	 *
+	 * @param {String} url
+	 * @param {Mixed|Function} [data] or fn
+	 * @param {Function} [fn]
+	 * @return {Request}
+	 * @api public
+	 */
+
+	request.get = function(url, data, fn){
+	  var req = request('GET', url);
+	  if ('function' == typeof data) fn = data, data = null;
+	  if (data) req.query(data);
+	  if (fn) req.end(fn);
+	  return req;
+	};
+
+	/**
+	 * HEAD `url` with optional callback `fn(res)`.
+	 *
+	 * @param {String} url
+	 * @param {Mixed|Function} [data] or fn
+	 * @param {Function} [fn]
+	 * @return {Request}
+	 * @api public
+	 */
+
+	request.head = function(url, data, fn){
+	  var req = request('HEAD', url);
+	  if ('function' == typeof data) fn = data, data = null;
+	  if (data) req.send(data);
+	  if (fn) req.end(fn);
+	  return req;
+	};
+
+	/**
+	 * OPTIONS query to `url` with optional callback `fn(res)`.
+	 *
+	 * @param {String} url
+	 * @param {Mixed|Function} [data] or fn
+	 * @param {Function} [fn]
+	 * @return {Request}
+	 * @api public
+	 */
+
+	request.options = function(url, data, fn){
+	  var req = request('OPTIONS', url);
+	  if ('function' == typeof data) fn = data, data = null;
+	  if (data) req.send(data);
+	  if (fn) req.end(fn);
+	  return req;
+	};
+
+	/**
+	 * DELETE `url` with optional callback `fn(res)`.
+	 *
+	 * @param {String} url
+	 * @param {Function} [fn]
+	 * @return {Request}
+	 * @api public
+	 */
+
+	function del(url, fn){
+	  var req = request('DELETE', url);
+	  if (fn) req.end(fn);
+	  return req;
+	};
+
+	request['del'] = del;
+	request['delete'] = del;
+
+	/**
+	 * PATCH `url` with optional `data` and callback `fn(res)`.
+	 *
+	 * @param {String} url
+	 * @param {Mixed} [data]
+	 * @param {Function} [fn]
+	 * @return {Request}
+	 * @api public
+	 */
+
+	request.patch = function(url, data, fn){
+	  var req = request('PATCH', url);
+	  if ('function' == typeof data) fn = data, data = null;
+	  if (data) req.send(data);
+	  if (fn) req.end(fn);
+	  return req;
+	};
+
+	/**
+	 * POST `url` with optional `data` and callback `fn(res)`.
+	 *
+	 * @param {String} url
+	 * @param {Mixed} [data]
+	 * @param {Function} [fn]
+	 * @return {Request}
+	 * @api public
+	 */
+
+	request.post = function(url, data, fn){
+	  var req = request('POST', url);
+	  if ('function' == typeof data) fn = data, data = null;
+	  if (data) req.send(data);
+	  if (fn) req.end(fn);
+	  return req;
+	};
+
+	/**
+	 * PUT `url` with optional `data` and callback `fn(res)`.
+	 *
+	 * @param {String} url
+	 * @param {Mixed|Function} [data] or fn
+	 * @param {Function} [fn]
+	 * @return {Request}
+	 * @api public
+	 */
+
+	request.put = function(url, data, fn){
+	  var req = request('PUT', url);
+	  if ('function' == typeof data) fn = data, data = null;
+	  if (data) req.send(data);
+	  if (fn) req.end(fn);
+	  return req;
+	};
+
 
 /***/ },
 /* 21 */
 /***/ function(module, exports, __webpack_require__) {
 
+	
+	/**
+	 * Expose `Emitter`.
+	 */
+
+	if (true) {
+	  module.exports = Emitter;
+	}
+
+	/**
+	 * Initialize a new `Emitter`.
+	 *
+	 * @api public
+	 */
+
+	function Emitter(obj) {
+	  if (obj) return mixin(obj);
+	};
+
+	/**
+	 * Mixin the emitter properties.
+	 *
+	 * @param {Object} obj
+	 * @return {Object}
+	 * @api private
+	 */
+
+	function mixin(obj) {
+	  for (var key in Emitter.prototype) {
+	    obj[key] = Emitter.prototype[key];
+	  }
+	  return obj;
+	}
+
+	/**
+	 * Listen on the given `event` with `fn`.
+	 *
+	 * @param {String} event
+	 * @param {Function} fn
+	 * @return {Emitter}
+	 * @api public
+	 */
+
+	Emitter.prototype.on =
+	Emitter.prototype.addEventListener = function(event, fn){
+	  this._callbacks = this._callbacks || {};
+	  (this._callbacks['$' + event] = this._callbacks['$' + event] || [])
+	    .push(fn);
+	  return this;
+	};
+
+	/**
+	 * Adds an `event` listener that will be invoked a single
+	 * time then automatically removed.
+	 *
+	 * @param {String} event
+	 * @param {Function} fn
+	 * @return {Emitter}
+	 * @api public
+	 */
+
+	Emitter.prototype.once = function(event, fn){
+	  function on() {
+	    this.off(event, on);
+	    fn.apply(this, arguments);
+	  }
+
+	  on.fn = fn;
+	  this.on(event, on);
+	  return this;
+	};
+
+	/**
+	 * Remove the given callback for `event` or all
+	 * registered callbacks.
+	 *
+	 * @param {String} event
+	 * @param {Function} fn
+	 * @return {Emitter}
+	 * @api public
+	 */
+
+	Emitter.prototype.off =
+	Emitter.prototype.removeListener =
+	Emitter.prototype.removeAllListeners =
+	Emitter.prototype.removeEventListener = function(event, fn){
+	  this._callbacks = this._callbacks || {};
+
+	  // all
+	  if (0 == arguments.length) {
+	    this._callbacks = {};
+	    return this;
+	  }
+
+	  // specific event
+	  var callbacks = this._callbacks['$' + event];
+	  if (!callbacks) return this;
+
+	  // remove all handlers
+	  if (1 == arguments.length) {
+	    delete this._callbacks['$' + event];
+	    return this;
+	  }
+
+	  // remove specific handler
+	  var cb;
+	  for (var i = 0; i < callbacks.length; i++) {
+	    cb = callbacks[i];
+	    if (cb === fn || cb.fn === fn) {
+	      callbacks.splice(i, 1);
+	      break;
+	    }
+	  }
+	  return this;
+	};
+
+	/**
+	 * Emit `event` with the given args.
+	 *
+	 * @param {String} event
+	 * @param {Mixed} ...
+	 * @return {Emitter}
+	 */
+
+	Emitter.prototype.emit = function(event){
+	  this._callbacks = this._callbacks || {};
+	  var args = [].slice.call(arguments, 1)
+	    , callbacks = this._callbacks['$' + event];
+
+	  if (callbacks) {
+	    callbacks = callbacks.slice(0);
+	    for (var i = 0, len = callbacks.length; i < len; ++i) {
+	      callbacks[i].apply(this, args);
+	    }
+	  }
+
+	  return this;
+	};
+
+	/**
+	 * Return array of callbacks for `event`.
+	 *
+	 * @param {String} event
+	 * @return {Array}
+	 * @api public
+	 */
+
+	Emitter.prototype.listeners = function(event){
+	  this._callbacks = this._callbacks || {};
+	  return this._callbacks['$' + event] || [];
+	};
+
+	/**
+	 * Check if this emitter has `event` handlers.
+	 *
+	 * @param {String} event
+	 * @return {Boolean}
+	 * @api public
+	 */
+
+	Emitter.prototype.hasListeners = function(event){
+	  return !! this.listeners(event).length;
+	};
+
+
+/***/ },
+/* 22 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Module of mixed-in functions shared between node and client code
+	 */
+	var isObject = __webpack_require__(23);
+
+	/**
+	 * Clear previous timeout.
+	 *
+	 * @return {Request} for chaining
+	 * @api public
+	 */
+
+	exports.clearTimeout = function _clearTimeout(){
+	  this._timeout = 0;
+	  clearTimeout(this._timer);
+	  return this;
+	};
+
+	/**
+	 * Override default response body parser
+	 *
+	 * This function will be called to convert incoming data into request.body
+	 *
+	 * @param {Function}
+	 * @api public
+	 */
+
+	exports.parse = function parse(fn){
+	  this._parser = fn;
+	  return this;
+	};
+
+	/**
+	 * Override default request body serializer
+	 *
+	 * This function will be called to convert data set via .send or .attach into payload to send
+	 *
+	 * @param {Function}
+	 * @api public
+	 */
+
+	exports.serialize = function serialize(fn){
+	  this._serializer = fn;
+	  return this;
+	};
+
+	/**
+	 * Set timeout to `ms`.
+	 *
+	 * @param {Number} ms
+	 * @return {Request} for chaining
+	 * @api public
+	 */
+
+	exports.timeout = function timeout(ms){
+	  this._timeout = ms;
+	  return this;
+	};
+
+	/**
+	 * Promise support
+	 *
+	 * @param {Function} resolve
+	 * @param {Function} reject
+	 * @return {Request}
+	 */
+
+	exports.then = function then(resolve, reject) {
+	  if (!this._fullfilledPromise) {
+	    var self = this;
+	    this._fullfilledPromise = new Promise(function(innerResolve, innerReject){
+	      self.end(function(err, res){
+	        if (err) innerReject(err); else innerResolve(res);
+	      });
+	    });
+	  }
+	  return this._fullfilledPromise.then(resolve, reject);
+	}
+
+	exports.catch = function(cb) {
+	  return this.then(undefined, cb);
+	};
+
+	/**
+	 * Allow for extension
+	 */
+
+	exports.use = function use(fn) {
+	  fn(this);
+	  return this;
+	}
+
+
+	/**
+	 * Get request header `field`.
+	 * Case-insensitive.
+	 *
+	 * @param {String} field
+	 * @return {String}
+	 * @api public
+	 */
+
+	exports.get = function(field){
+	  return this._header[field.toLowerCase()];
+	};
+
+	/**
+	 * Get case-insensitive header `field` value.
+	 * This is a deprecated internal API. Use `.get(field)` instead.
+	 *
+	 * (getHeader is no longer used internally by the superagent code base)
+	 *
+	 * @param {String} field
+	 * @return {String}
+	 * @api private
+	 * @deprecated
+	 */
+
+	exports.getHeader = exports.get;
+
+	/**
+	 * Set header `field` to `val`, or multiple fields with one object.
+	 * Case-insensitive.
+	 *
+	 * Examples:
+	 *
+	 *      req.get('/')
+	 *        .set('Accept', 'application/json')
+	 *        .set('X-API-Key', 'foobar')
+	 *        .end(callback);
+	 *
+	 *      req.get('/')
+	 *        .set({ Accept: 'application/json', 'X-API-Key': 'foobar' })
+	 *        .end(callback);
+	 *
+	 * @param {String|Object} field
+	 * @param {String} val
+	 * @return {Request} for chaining
+	 * @api public
+	 */
+
+	exports.set = function(field, val){
+	  if (isObject(field)) {
+	    for (var key in field) {
+	      this.set(key, field[key]);
+	    }
+	    return this;
+	  }
+	  this._header[field.toLowerCase()] = val;
+	  this.header[field] = val;
+	  return this;
+	};
+
+	/**
+	 * Remove header `field`.
+	 * Case-insensitive.
+	 *
+	 * Example:
+	 *
+	 *      req.get('/')
+	 *        .unset('User-Agent')
+	 *        .end(callback);
+	 *
+	 * @param {String} field
+	 */
+	exports.unset = function(field){
+	  delete this._header[field.toLowerCase()];
+	  delete this.header[field];
+	  return this;
+	};
+
+	/**
+	 * Write the field `name` and `val`, or multiple fields with one object
+	 * for "multipart/form-data" request bodies.
+	 *
+	 * ``` js
+	 * request.post('/upload')
+	 *   .field('foo', 'bar')
+	 *   .end(callback);
+	 *
+	 * request.post('/upload')
+	 *   .field({ foo: 'bar', baz: 'qux' })
+	 *   .end(callback);
+	 * ```
+	 *
+	 * @param {String|Object} name
+	 * @param {String|Blob|File|Buffer|fs.ReadStream} val
+	 * @return {Request} for chaining
+	 * @api public
+	 */
+	exports.field = function(name, val) {
+
+	  // name should be either a string or an object.
+	  if (null === name ||  undefined === name) {
+	    throw new Error('.field(name, val) name can not be empty');
+	  }
+
+	  if (isObject(name)) {
+	    for (var key in name) {
+	      this.field(key, name[key]);
+	    }
+	    return this;
+	  }
+
+	  // val should be defined now
+	  if (null === val || undefined === val) {
+	    throw new Error('.field(name, val) val can not be empty');
+	  }
+	  this._getFormData().append(name, val);
+	  return this;
+	};
+
+	/**
+	 * Abort the request, and clear potential timeout.
+	 *
+	 * @return {Request}
+	 * @api public
+	 */
+	exports.abort = function(){
+	  if (this._aborted) {
+	    return this;
+	  }
+	  this._aborted = true;
+	  this.xhr && this.xhr.abort(); // browser
+	  this.req && this.req.abort(); // node
+	  this.clearTimeout();
+	  this.emit('abort');
+	  return this;
+	};
+
+	/**
+	 * Enable transmission of cookies with x-domain requests.
+	 *
+	 * Note that for this to work the origin must not be
+	 * using "Access-Control-Allow-Origin" with a wildcard,
+	 * and also must set "Access-Control-Allow-Credentials"
+	 * to "true".
+	 *
+	 * @api public
+	 */
+
+	exports.withCredentials = function(){
+	  // This is browser-only functionality. Node side is no-op.
+	  this._withCredentials = true;
+	  return this;
+	};
+
+	/**
+	 * Set the max redirects to `n`. Does noting in browser XHR implementation.
+	 *
+	 * @param {Number} n
+	 * @return {Request} for chaining
+	 * @api public
+	 */
+
+	exports.redirects = function(n){
+	  this._maxRedirects = n;
+	  return this;
+	};
+
+	/**
+	 * Convert to a plain javascript object (not JSON string) of scalar properties.
+	 * Note as this method is designed to return a useful non-this value,
+	 * it cannot be chained.
+	 *
+	 * @return {Object} describing method, url, and data of this request
+	 * @api public
+	 */
+
+	exports.toJSON = function(){
+	  return {
+	    method: this.method,
+	    url: this.url,
+	    data: this._data,
+	    headers: this._header
+	  };
+	};
+
+	/**
+	 * Check if `obj` is a host object,
+	 * we don't want to serialize these :)
+	 *
+	 * TODO: future proof, move to compoent land
+	 *
+	 * @param {Object} obj
+	 * @return {Boolean}
+	 * @api private
+	 */
+
+	exports._isHost = function _isHost(obj) {
+	  var str = {}.toString.call(obj);
+
+	  switch (str) {
+	    case '[object File]':
+	    case '[object Blob]':
+	    case '[object FormData]':
+	      return true;
+	    default:
+	      return false;
+	  }
+	}
+
+	/**
+	 * Send `data` as the request body, defaulting the `.type()` to "json" when
+	 * an object is given.
+	 *
+	 * Examples:
+	 *
+	 *       // manual json
+	 *       request.post('/user')
+	 *         .type('json')
+	 *         .send('{"name":"tj"}')
+	 *         .end(callback)
+	 *
+	 *       // auto json
+	 *       request.post('/user')
+	 *         .send({ name: 'tj' })
+	 *         .end(callback)
+	 *
+	 *       // manual x-www-form-urlencoded
+	 *       request.post('/user')
+	 *         .type('form')
+	 *         .send('name=tj')
+	 *         .end(callback)
+	 *
+	 *       // auto x-www-form-urlencoded
+	 *       request.post('/user')
+	 *         .type('form')
+	 *         .send({ name: 'tj' })
+	 *         .end(callback)
+	 *
+	 *       // defaults to x-www-form-urlencoded
+	 *      request.post('/user')
+	 *        .send('name=tobi')
+	 *        .send('species=ferret')
+	 *        .end(callback)
+	 *
+	 * @param {String|Object} data
+	 * @return {Request} for chaining
+	 * @api public
+	 */
+
+	exports.send = function(data){
+	  var obj = isObject(data);
+	  var type = this._header['content-type'];
+
+	  // merge
+	  if (obj && isObject(this._data)) {
+	    for (var key in data) {
+	      this._data[key] = data[key];
+	    }
+	  } else if ('string' == typeof data) {
+	    // default to x-www-form-urlencoded
+	    if (!type) this.type('form');
+	    type = this._header['content-type'];
+	    if ('application/x-www-form-urlencoded' == type) {
+	      this._data = this._data
+	        ? this._data + '&' + data
+	        : data;
+	    } else {
+	      this._data = (this._data || '') + data;
+	    }
+	  } else {
+	    this._data = data;
+	  }
+
+	  if (!obj || this._isHost(data)) return this;
+
+	  // default to json
+	  if (!type) this.type('json');
+	  return this;
+	};
+
+
+/***/ },
+/* 23 */
+/***/ function(module, exports) {
+
+	/**
+	 * Check if `obj` is an object.
+	 *
+	 * @param {Object} obj
+	 * @return {Boolean}
+	 * @api private
+	 */
+
+	function isObject(obj) {
+	  return null !== obj && 'object' === typeof obj;
+	}
+
+	module.exports = isObject;
+
+
+/***/ },
+/* 24 */
+/***/ function(module, exports) {
+
+	// The node and browser modules expose versions of this with the
+	// appropriate constructor function bound as first argument
+	/**
+	 * Issue a request:
+	 *
+	 * Examples:
+	 *
+	 *    request('GET', '/users').end(callback)
+	 *    request('/users').end(callback)
+	 *    request('/users', callback)
+	 *
+	 * @param {String} method
+	 * @param {String|Function} url or callback
+	 * @return {Request}
+	 * @api public
+	 */
+
+	function request(RequestConstructor, method, url) {
+	  // callback
+	  if ('function' == typeof url) {
+	    return new RequestConstructor('GET', method).end(url);
+	  }
+
+	  // url first
+	  if (2 == arguments.length) {
+	    return new RequestConstructor('GET', method);
+	  }
+
+	  return new RequestConstructor(method, url);
+	}
+
+	module.exports = request;
+
+
+/***/ },
+/* 25 */
+/***/ function(module, exports, __webpack_require__) {
+
 	var __vue_exports__, __vue_options__
 
 	/* script */
-	__vue_exports__ = __webpack_require__(22)
+	__vue_exports__ = __webpack_require__(26)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(23)
+	var __vue_template__ = __webpack_require__(27)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -10468,7 +12019,7 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/home/ubuntu/workspace/cs-mgmt/frontend/app/lib/components/userform/input.vue"
+	__vue_options__.__file = "/home/ubuntu/workspace/cs-mgmt/frontend/app/components/userform/input.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 
@@ -10479,9 +12030,9 @@
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-43dfa0a2", __vue_options__)
+	    hotAPI.createRecord("data-v-e14819a8", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-43dfa0a2", __vue_options__)
+	    hotAPI.reload("data-v-e14819a8", __vue_options__)
 	  }
 	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] input.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -10490,7 +12041,7 @@
 
 
 /***/ },
-/* 22 */
+/* 26 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -10514,7 +12065,7 @@
 	};
 
 /***/ },
-/* 23 */
+/* 27 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){with(this) {
@@ -10571,68 +12122,69 @@
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-43dfa0a2", module.exports)
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-e14819a8", module.exports)
 	  }
 	}
 
 /***/ },
-/* 24 */
+/* 28 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){with(this) {
 	  return _h('form', {
-	    staticClass: "cs-form",
-	    attrs: {
-	      "method": method,
-	      "action": action,
-	      "onsubmit": "return false;"
+	    staticClass: "form",
+	    on: {
+	      "submit": function($event) {
+	        $event.preventDefault();
+	        submit($event)
+	      }
 	    }
 	  }, [_l((inputs), function(input) {
 	    return _h('div', {
-	      staticClass: "cs-form-control"
+	      staticClass: "form-control"
 	    }, [_h('userform-input', {
 	      attrs: {
 	        "input": input
 	      }
-	    }), (errors[input.name] && errors[input.name].length) ? _h('div', {
-	      staticClass: "cs-form-errors"
-	    }, ["ERR: " + _s(errors[input.name])]) : _e()])
+	    }), (inputErrors[input.name] && inputErrors[input.name].length) ? _h('div', {
+	      staticClass: "form-errors"
+	    }, ["ERR: " + _s(inputErrors[input.name])]) : _e()])
 	  }), _h('div', {
-	    staticClass: "cs-form-control"
+	    staticClass: "form-control"
 	  }, [_h('button', {
-	    staticClass: "cs-button-success",
-	    on: {
-	      "click": submit
-	    }
-	  }, [_s(state)])])])
+	    staticClass: "button-success"
+	  }, [_s(state)])]), _h('div', {
+	    staticClass: "form-errors"
+	  }, [(serverErrors['status']) ? _h('div', {
+	    staticClass: "message message-error"
+	  }, ["ERROR: " + _s(serverErrors['status'])]) : _e()])])
 	}},staticRenderFns: []}
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-26655f32", module.exports)
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-5674d271", module.exports)
 	  }
 	}
 
 /***/ },
-/* 25 */
+/* 29 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){with(this) {
 	  return _h('div', {
-	    staticClass: "cs-page"
+	    staticClass: "page"
 	  }, [_h('div', {
-	    staticClass: "cs-panel"
+	    staticClass: "panel"
 	  }, [_m(0), _h('div', {
-	    staticClass: "cs-panel-body"
+	    staticClass: "panel-body"
 	  }, [_h('userform', {
 	    attrs: {
 	      "firstState": "Sign in",
-	      "method": "post",
-	      "action": userSessionPath,
-	      "inputs": formInputs
+	      "inputs": formInputs,
+	      "on-submit": formSubmit
 	    }
 	  })]), _h('div', {
-	    staticClass: "cs-panel-footer"
+	    staticClass: "panel-footer"
 	  }, [_h('ul', [_h('li', [_m(1), _h('router-link', {
 	    attrs: {
 	      "to": "/signup"
@@ -10644,7 +12196,7 @@
 	  }, ["Back to home"])])])])])])
 	}},staticRenderFns: [function (){with(this) {
 	  return _h('div', {
-	    staticClass: "cs-panel-title"
+	    staticClass: "panel-title"
 	  }, ["Sign in"])
 	}},function (){with(this) {
 	  return _h('span', ["New to codestand.io? "])
@@ -10652,209 +12204,7 @@
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-f6b8baac", module.exports)
-	  }
-	}
-
-/***/ },
-/* 26 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __vue_exports__, __vue_options__
-
-	/* script */
-	__vue_exports__ = __webpack_require__(27)
-
-	/* template */
-	var __vue_template__ = __webpack_require__(29)
-	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
-	if (
-	  typeof __vue_exports__.default === "object" ||
-	  typeof __vue_exports__.default === "function"
-	) {
-	if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
-	__vue_options__ = __vue_exports__ = __vue_exports__.default
-	}
-	if (typeof __vue_options__ === "function") {
-	  __vue_options__ = __vue_options__.options
-	}
-	__vue_options__.__file = "/home/ubuntu/workspace/cs-mgmt/frontend/app/views/signout.vue"
-	__vue_options__.render = __vue_template__.render
-	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-
-	/* hot reload */
-	if (false) {(function () {
-	  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
-	  hotAPI.install(require("vue"), false)
-	  if (!hotAPI.compatible) return
-	  module.hot.accept()
-	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-5ce1bb19", __vue_options__)
-	  } else {
-	    hotAPI.reload("data-v-5ce1bb19", __vue_options__)
-	  }
-	})()}
-	if (__vue_options__.functional) {console.error("[vue-loader] signout.vue: functional components are not supported and should be defined in plain js files using render functions.")}
-
-	module.exports = __vue_exports__
-
-
-/***/ },
-/* 27 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _webapi = __webpack_require__(28);
-
-	var _webapi2 = _interopRequireDefault(_webapi);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	exports.default = {
-	  props: ['user-session-path'],
-	  data: function data() {
-	    return {
-	      state: 'Processing now...',
-	      errors: []
-	    };
-	  },
-	  mounted: function mounted() {
-	    var _this = this;
-
-	    console.log('signout: created', localStorage.getItem('cs-token'));
-	    new _webapi2.default(localStorage.getItem('cs-token')).signout(this.userSessionPath).then(function (res) {
-	      _this.state = 'OK, see you.';
-	      _this.reset();
-	      _this.move(150);
-	    }, function (res) {
-	      _this.state = 'Oops...';
-	      _this.errors = res.response && res.response.errors || res.statusText;
-	      _this.move(5000);
-	    });
-	  },
-
-	  methods: {
-	    reset: function reset() {
-	      localStorage.removeItem('cs-token');
-	      localStorage.removeItem('cs-username');
-	    },
-	    move: function move(delay) {
-	      var _this2 = this;
-
-	      setTimeout(function (_) {
-	        _this2.$root.$router.push('/');
-	      }, delay);
-	    }
-	  }
-	}; //
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-
-/***/ },
-/* 28 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _request = __webpack_require__(20);
-
-	var _request2 = _interopRequireDefault(_request);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	var API = function () {
-	  function API(token) {
-	    _classCallCheck(this, API);
-
-	    this.token = token;
-	  }
-
-	  _createClass(API, [{
-	    key: 'send',
-	    value: function send(method, url, data) {
-	      var _this = this;
-
-	      return new Promise(function (resolve, reject) {
-	        var headers = { Authorization: 'token ' + _this.token };
-	        _request2.default.sendJSON(method, url, data, { headers: headers }).then(function (res) {
-	          resolve(res.response.applications);
-	          // TODO: error handling
-	        }, reject);
-	      });
-	    }
-	  }, {
-	    key: 'signout',
-	    value: function signout() {
-	      return this.send('DELETE', '/api/auth/sign_out');
-	    }
-	  }, {
-	    key: 'apps',
-	    value: function apps(team) {
-	      return this.send('GET', '/api/' + team + '/apps');
-	    }
-	  }]);
-
-	  return API;
-	}();
-
-	exports.default = API;
-	;
-
-/***/ },
-/* 29 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports={render:function (){with(this) {
-	  return _h('div', {
-	    staticClass: "cs-page"
-	  }, [_h('div', {
-	    staticClass: "cs-panel"
-	  }, [_m(0), _h('div', {
-	    staticClass: "cs-panel-body"
-	  }, [_h('div', {
-	    staticClass: "cs-state"
-	  }, [_s(state)]), (errors.length > 0) ? _h('div', {
-	    staticClass: "cs-errors"
-	  }, [_s(errors)]) : _e()]), _h('div', {
-	    staticClass: "cs-panel-footer"
-	  }, [_h('router-link', {
-	    attrs: {
-	      "to": "/"
-	    }
-	  }, ["Home"])])])])
-	}},staticRenderFns: [function (){with(this) {
-	  return _h('div', {
-	    staticClass: "cs-panel-header"
-	  }, [_h('div', {
-	    staticClass: "cs-panel-title"
-	  }, ["Sign out"])])
-	}}]}
-	if (false) {
-	  module.hot.accept()
-	  if (module.hot.data) {
-	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-5ce1bb19", module.exports)
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-6ae23b94", module.exports)
 	  }
 	}
 
@@ -10880,7 +12230,7 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/home/ubuntu/workspace/cs-mgmt/frontend/app/views/signup.vue"
+	__vue_options__.__file = "/home/ubuntu/workspace/cs-mgmt/frontend/app/pages/signout.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 
@@ -10891,9 +12241,134 @@
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-cd8c0dc0", __vue_options__)
+	    hotAPI.createRecord("data-v-3e763f6f", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-cd8c0dc0", __vue_options__)
+	    hotAPI.reload("data-v-3e763f6f", __vue_options__)
+	  }
+	})()}
+	if (__vue_options__.functional) {console.error("[vue-loader] signout.vue: functional components are not supported and should be defined in plain js files using render functions.")}
+
+	module.exports = __vue_exports__
+
+
+/***/ },
+/* 31 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _api = __webpack_require__(37);
+
+	var _api2 = _interopRequireDefault(_api);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = {
+	  data: function data() {
+	    return { state: 'Processing now...', error: null };
+	  },
+	  mounted: function mounted() {
+	    var _this = this;
+
+	    new _api2.default(localStorage.getItem('cs-token')).signout().then(function (res) {
+	      localStorage.removeItem('cs-token');
+	      localStorage.removeItem('cs-username');
+	      _this.$root.$router.push('/');
+	      _this.state = 'OK, see you';
+	    }, function (err) {
+	      _this.error = err;
+	      _this.state = 'Error';
+	    });
+	  }
+	}; //
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+
+/***/ },
+/* 32 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports={render:function (){with(this) {
+	  return _h('div', {
+	    staticClass: "page"
+	  }, [_h('div', {
+	    staticClass: "panel"
+	  }, [_m(0), _h('div', {
+	    staticClass: "panel-body"
+	  }, [_h('div', {
+	    staticClass: "state"
+	  }, [_s(state)]), (error) ? _h('div', {
+	    staticClass: "message message-error"
+	  }, [_s(error)]) : _e()]), _h('div', {
+	    staticClass: "panel-footer"
+	  }, [_h('router-link', {
+	    attrs: {
+	      "to": "/"
+	    }
+	  }, ["Home"])])])])
+	}},staticRenderFns: [function (){with(this) {
+	  return _h('div', {
+	    staticClass: "panel-header"
+	  }, [_h('div', {
+	    staticClass: "panel-title"
+	  }, ["Sign out"])])
+	}}]}
+	if (false) {
+	  module.hot.accept()
+	  if (module.hot.data) {
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-3e763f6f", module.exports)
+	  }
+	}
+
+/***/ },
+/* 33 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_exports__, __vue_options__
+
+	/* script */
+	__vue_exports__ = __webpack_require__(34)
+
+	/* template */
+	var __vue_template__ = __webpack_require__(35)
+	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+	if (
+	  typeof __vue_exports__.default === "object" ||
+	  typeof __vue_exports__.default === "function"
+	) {
+	if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+	__vue_options__ = __vue_exports__ = __vue_exports__.default
+	}
+	if (typeof __vue_options__ === "function") {
+	  __vue_options__ = __vue_options__.options
+	}
+	__vue_options__.__file = "/home/ubuntu/workspace/cs-mgmt/frontend/app/pages/signup.vue"
+	__vue_options__.render = __vue_template__.render
+	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+
+	/* hot reload */
+	if (false) {(function () {
+	  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  module.hot.accept()
+	  if (!module.hot.data) {
+	    hotAPI.createRecord("data-v-7f78920a", __vue_options__)
+	  } else {
+	    hotAPI.reload("data-v-7f78920a", __vue_options__)
 	  }
 	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] signup.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -10902,7 +12377,7 @@
 
 
 /***/ },
-/* 31 */
+/* 34 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -10929,38 +12404,42 @@
 
 	exports.default = {
 	  name: 'signup',
-	  props: ['user-registration-path'],
-	  components: {
-	    'userform': __webpack_require__(18)
-	  },
+	  components: { 'userform': __webpack_require__(18) },
 	  data: function data(_) {
 	    return {
 	      formInputs: [{ name: 'email', type: 'text', placeholder: 'e.g., brine@example.com' }, { name: 'name', type: 'text', placeholder: 'e.g., brine' }, { name: 'password', type: 'password', placeholder: 'at least 8 characters' }]
 	    };
+	  },
+	  methods: {
+	    formSubmit: function formSubmit(user) {
+	      var _this = this;
+
+	      return api.signup(user).then(function (res) {
+	        _this.$router.push('/signin');
+	      });
+	    }
 	  }
 	};
 
 /***/ },
-/* 32 */
+/* 35 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){with(this) {
 	  return _h('div', {
-	    staticClass: "cs-page"
+	    staticClass: "page"
 	  }, [_h('div', {
-	    staticClass: "cs-panel"
+	    staticClass: "panel"
 	  }, [_m(0), _h('div', {
-	    staticClass: "cs-panel-body"
+	    staticClass: "panel-body"
 	  }, [_h('userform', {
 	    attrs: {
 	      "firstState": "Sign up",
-	      "successCallback": "/signin",
-	      "method": "post",
-	      "action": userRegistrationPath,
-	      "inputs": formInputs
+	      "inputs": formInputs,
+	      "on-submit": formSubmit
 	    }
 	  })]), _h('div', {
-	    staticClass: "cs-panel-footer"
+	    staticClass: "panel-footer"
 	  }, [_h('ul', [_h('li', [_m(1), _h('router-link', {
 	    attrs: {
 	      "to": "/signin"
@@ -10972,9 +12451,9 @@
 	  }, ["Back to home"])])])])])])
 	}},staticRenderFns: [function (){with(this) {
 	  return _h('div', {
-	    staticClass: "cs-panel-header"
+	    staticClass: "panel-header"
 	  }, [_h('div', {
-	    staticClass: "cs-panel-title"
+	    staticClass: "panel-title"
 	  }, ["Sign up"])])
 	}},function (){with(this) {
 	  return _h('span', ["Have an account? "])
@@ -10982,9 +12461,79 @@
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-cd8c0dc0", module.exports)
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-7f78920a", module.exports)
 	  }
 	}
+
+/***/ },
+/* 36 */,
+/* 37 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _superagent = __webpack_require__(20);
+
+	var _superagent2 = _interopRequireDefault(_superagent);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	var API = function () {
+	  function API(token) {
+	    _classCallCheck(this, API);
+
+	    this.token = token;
+	  }
+
+	  _createClass(API, [{
+	    key: 'signup',
+	    value: function signup(params) {
+	      return this.send('post', '/api/auth', params);
+	    }
+	  }, {
+	    key: 'signin',
+	    value: function signin(params) {
+	      return this.send('post', '/api/auth/sign_in', params);
+	    }
+	  }, {
+	    key: 'signout',
+	    value: function signout() {
+	      return this.send('delete', '/api/auth/sign_out');
+	    }
+	  }, {
+	    key: 'apps',
+	    value: function apps(team) {
+	      return this.send('get', '/api/' + team + '/apps');
+	    }
+	  }, {
+	    key: 'send',
+	    value: function send(method, url, params) {
+	      var _this = this;
+
+	      return new Promise(function (resolve, reject) {
+	        var req = _superagent2.default[method](url);
+	        if (_this.token) req.set('authorization', 'token ' + _this.token);
+	        if (params) req.send(params);
+	        req.end(function (err, res) {
+	          return (err ? reject : resolve)(res);
+	        });
+	      });
+	    }
+	  }]);
+
+	  return API;
+	}();
+
+	exports.default = API;
+	;
 
 /***/ }
 /******/ ]);
