@@ -18,20 +18,17 @@
       return { state: 'Processing now...', error: null }
     },
     mounted() {
-      new API(localStorage.getItem('cs-token'))
-        .signout()
-        .then(
-          res => {
-            localStorage.removeItem('cs-token');
-            localStorage.removeItem('cs-username');
-            this.$root.$router.push('/');
-            this.state = 'OK, see you';
-          },
-          err => {
-            this.error = err;
-            this.state = 'Error';
-          }
-        )
+      api.signout().then(
+        res => {
+          api.token = null;
+          this.state = 'OK, see you';
+          this.$root.$router.push('/');
+        },
+        res => {
+          this.state = 'Error';
+          this.error = res.statusText;
+        }
+      )
     }
   }
 </script>

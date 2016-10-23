@@ -1,5 +1,5 @@
 <template lang='pug'>
-  .cs-form-input
+  .form-input
     label(:for='input.name') {{input.name}}
     div(v-if='input.type === \'password\'')
       input(v-model='input.value', type='password', :name='input.name', :placeholder='input.placeholder')

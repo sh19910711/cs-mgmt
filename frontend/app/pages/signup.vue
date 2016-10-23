@@ -28,8 +28,9 @@
       };
     },
     methods: {
-      formSubmit(user) {
-        return api.signup(user).then(res => {
+      formSubmit(params) {
+        return api.signup(params).then(res => {
+          api.toekn = res.headers['token']
           this.$router.push('/signin');
         });
       }

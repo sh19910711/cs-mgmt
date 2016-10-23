@@ -1,8 +1,3 @@
-<style lang='sass' scoped>
-  .block
-    margin-bottom: 32px
-</style>
-
 <template lang='pug'>
   .page
     navbar
@@ -39,11 +34,8 @@
         .block-body
           code
             | $ codestand deploy
-
 </template>
 
 <script>
-  export default {
-    components: { navbar: require('components/navbar.vue') }
-  }
+  export default { components: { navbar: require('components/navbar.vue') } }
 </script>

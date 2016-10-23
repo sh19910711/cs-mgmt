@@ -6,7 +6,7 @@
         | ERR: {{inputErrors[input.name]}}
 
     .form-control
-      button.button-success {{state}}
+      a.button.button-success(v-on:click='submit') {{state}}
 
     .form-errors
       .message.message-error(v-if="serverErrors['status']") ERROR: {{serverErrors['status']}}

@@ -1,7 +1,8 @@
 <template lang='pug'>
   .page
     .panel
-      .panel-title Sign in
+      .panel-header
+        .panel-title Sign in
       .panel-body
         userform(firstState='Sign in', :inputs='formInputs', :on-submit='formSubmit')
       .panel-footer
@@ -14,8 +15,6 @@
 </template>
 
 <script>
-  import request from 'superagent';
-
   export default {
     name: 'signin',
     components: { 'userform': require('components/userform.vue') },
@@ -30,8 +29,7 @@
     methods: {
       formSubmit(user) {
         return api.signin(user).then(res => {
-          localStorage.setItem('cs-token', api.token = res.headers['token']);
-          localStorage.setItem('cs-username', res.headers['username']);
+          api.token = res.headers['token'];
           this.$router.push('/');
         })
       }
