@@ -1,12 +1,12 @@
 <template lang='pug'>
-  .cs-navbar
+  .navbar
     // login
-    .cs-nav(v-if='currentUser()')
-      .cs-nav-left
-        h1.cs-nav-brand
+    .nav(v-if='currentUser()')
+      .nav-left
+        h1.nav-brand
           router-link(to='/') codestand.io
-      .cs-nav-right
-        ul.cs-nav-list
+      .nav-right
+        ul.nav-list
           li
             router-link(to='/') Home
           li
@@ -18,12 +18,12 @@
             router-link(to='/signout') Sign out
 
     // not login
-    .cs-nav(v-else)
-      .cs-nav-left
-        h1.cs-nav-brand
+    .nav(v-else)
+      .nav-left
+        h1.nav-brand
           router-link(to='/') codestand.io
-      .cs-nav-right
-        ul.cs-nav-list
+      .nav-right
+        ul.nav-list
           li
             router-link(to='/signin') Sign in
           li

@@ -20,6 +20,7 @@
     "webpack": "^1.13.2"
   },
   "dependencies": {
+    "superagent": "^2.3.0",
     "vue": "^2.0.3",
     "vue-router": "^2.0.0"
   }

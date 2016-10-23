@@ -1,12 +1,14 @@
 require('./styles/main.sass');
 
+import API from 'lib/api';
 import Vue from 'vue';
 import VueRouter from 'vue-router';
+
 Vue.use(VueRouter);
 
 function createRouter() {
   function route(path, name) {
-    return {name: name, path: path, component: require(`./views/${name}.vue`)};
+    return {name: name, path: path, component: require(`./pages/${name}.vue`)};
   }
   const routes = [
     route('/', 'index'),
@@ -16,6 +18,8 @@ function createRouter() {
   ];
   return new VueRouter({routes, mode: 'history'});
 }
+
+window.api = new API(localStorage.getItem('cs-token'));
 
 window.onload = _ => {
   const router = createRouter();

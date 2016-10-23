@@ -13,14 +13,14 @@ body
   &[data-page-name="signin"], &[data-page-name="signup"], &[data-page-name="signout"]
     &
       background: $color-main-light
-    .cs-panel
+    .panel
       width: 360px
       margin: 128px auto
 
-.cs-container
+.container
   padding: $side-padding
 
-.cs-page
+.page
   &-content
     font-size: $font-size-medium
     font-family: 'Source Sans Pro', sans-serif
@@ -32,7 +32,7 @@ body
   &-center
     margin: 0 auto
 
-.cs-block
+.block
   &-header
     color: $color-main-dark
   &-body
@@ -44,7 +44,7 @@ body
       padding: 12px
 
 // show on top of page
-.cs-nav
+.nav
   $nav-height: 36px
   &
     height: $nav-height
@@ -70,7 +70,7 @@ body
   &:after
     @include clearfix
 
-.cs-leading
+.leading
   &
     text-align: center
     background: $color-main-dark
@@ -87,7 +87,7 @@ body
     padding: 12px 0
 
 // example: wrapping forms for signup signin
-.cs-panel
+.panel
   $panel-padding: 18px
   &
     background: $color-white
@@ -112,7 +112,7 @@ body
   &-title, &-desc
     text-align: center
 
-.cs-form
+.form
   label
     color: #999
   &-errors
@@ -134,12 +134,12 @@ body
     input, button
       font-size: $font-size-medium
 
-.cs-button
+.button
   &-success
     background: $color-positive
     border: 1px solid $color-positive-dark
     color: $color-positive-text
 
-.cs-page
+.page
   width: 100%
   height: 100%

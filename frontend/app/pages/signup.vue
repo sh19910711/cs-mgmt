@@ -1,11 +1,11 @@
 <template lang='pug'>
-  .cs-page
-    .cs-panel
-      .cs-panel-header
-        .cs-panel-title Sign up
-      .cs-panel-body
-        userform(firstState='Sign up', successCallback='/signin', method='post', :action='userRegistrationPath', :inputs='formInputs')
-      .cs-panel-footer
+  .page
+    .panel
+      .panel-header
+        .panel-title Sign up
+      .panel-body
+        userform(firstState='Sign up', :inputs='formInputs', :on-submit='formSubmit')
+      .panel-footer
         ul
           li
             span Have an account?&nbsp;
@@ -17,10 +17,7 @@
 <script>
   export default {
     name: 'signup',
-    props: ['user-registration-path'],
-    components: {
-      'userform': require('components/userform.vue')
-    },
+    components: { 'userform': require('components/userform.vue') },
     data: _=> {
       return {
         formInputs: [
@@ -29,6 +26,13 @@
           { name: 'password', type: 'password', placeholder: 'at least 8 characters' }
         ]
       };
+    },
+    methods: {
+      formSubmit(user) {
+        return api.signup(user).then(res => {
+          this.$router.push('/signin');
+        });
+      }
     }
   }
 </script>

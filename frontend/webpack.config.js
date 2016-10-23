@@ -1,13 +1,9 @@
-const path = require('path');
-
+const APP_PATH = require('path').join(__dirname, 'app');
 module.exports = {
-  context: path.join(__dirname, 'app'),
-  entry: './main',
+  context: APP_PATH,
+  entry: 'main',
   output: { path: __dirname + '/../public/js', filename: 'bundle.js' },
-  resolve: {
-    root: [path.join(__dirname, 'app', 'lib')],
-    alias: { 'vue': 'vue/dist/vue.js' }
-  },
+  resolve: { root: [APP_PATH], alias: { 'vue': 'vue/dist/vue.js' } },
   module: {
     loaders: [
       { test: /\.vue$/, loader: 'vue' },

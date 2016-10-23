@@ -1,10 +1,10 @@
 <template lang='pug'>
-  .cs-page
-    .cs-panel
-      .cs-panel-title Sign in
-      .cs-panel-body
-        userform(firstState='Sign in', method='post', :action='userSessionPath', :inputs='formInputs')
-      .cs-panel-footer
+  .page
+    .panel
+      .panel-title Sign in
+      .panel-body
+        userform(firstState='Sign in', :inputs='formInputs', :on-submit='formSubmit')
+      .panel-footer
         ul
           li
             span New to codestand.io?&nbsp;
@@ -14,22 +14,27 @@
 </template>
 
 <script>
+  import request from 'superagent';
+
   export default {
     name: 'signin',
-    props: ['user-session-path'],
     components: { 'userform': require('components/userform.vue') },
     data: () => {
       return {
-        formSuccessCallback(xhr) {
-          localStorage.setItem('cs-token', xhr.getResponseHeader('token'));
-          localStorage.setItem('cs-username', xhr.getResponseHeader('username'));
-          this.$router.push('/');
-        },
         formInputs: [
           { name: 'username', type: 'text', placeholder: 'username', },
           { name: 'password', type: 'password', placeholder: 'password' }
         ]
       };
+    },
+    methods: {
+      formSubmit(user) {
+        return api.signin(user).then(res => {
+          localStorage.setItem('cs-token', api.token = res.headers['token']);
+          localStorage.setItem('cs-username', res.headers['username']);
+          this.$router.push('/');
+        })
+      }
     }
   }
 </script>
