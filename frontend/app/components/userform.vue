@@ -3,13 +3,13 @@
     .form-control(v-for='input in inputs')
       userform-input(:input='input')
       .form-errors(v-if='inputErrors[input.name] && inputErrors[input.name].length')
-        | ERR: {{inputErrors[input.name]}}
+        .form-errors-message ERR: {{inputErrors[input.name]}}
 
     .form-control
       a.button.button-success(v-on:click='submit') {{state}}
 
     .form-errors
-      .message.message-error(v-if="serverErrors['status']") ERROR: {{serverErrors['status']}}
+      .form-errors-message(v-if="serverErrors['status']") ERROR: {{serverErrors['status']}}
 </template>
 
 <script>

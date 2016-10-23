@@ -5,7 +5,8 @@ $font-size-large: 32px
 $font-size-medium: 18px
 $font-size-small: 12px
 $side-padding: 0 32px
-$shadow-black: 0 0 12px rgba(0, 0, 0, 0.125);
+$text-shadow-black: 1px 1px 3px rgba(0,0,0,0.25);
+$box-shadow-black: 0 0 12px rgba(0,0,0,0.125);
 
 *
   font-family: 'Source Sans Pro', sans-serif
@@ -35,16 +36,15 @@ body
   &-body
     code
       display: block
+      padding: 12px
       background: $color-accent
       color: $color-accent-text
-      border: 1px solid #dddddd
-      padding: 12px
+      border: 1px solid $color-accent-border
 
 .nav
-  $nav-height: 36px
+  $nav-height: 32px
   &
     height: $nav-height
-    font-size: $nav-height/2
     padding: $side-padding
     background: $color-white
     *
@@ -67,30 +67,31 @@ body
     @include clearfix
 
 .leading
+  $padding: 32px
   &
     text-align: center
     background: $color-main-dark
     border: 0 solid $color-main-light
     border-width: 3px 0
     color: $color-main-text
-    padding: 32px 0
+    padding: $padding 0
+  &-header
+    padding-top: $padding
+  &-body
+    padding: 12px 0
   &-title
     @include nomargin
     font-size: $font-size-large
-  &-header
-    padding-top: 32px
-  &-body
-    padding: 12px 0
+    text-shadow: $text-shadow-black
 
-// example: wrapping forms for signup signin
 .panel
   $panel-padding: 18px
   &
-    box-sizing: border-box
     background: $color-white
-    border: 1px solid $color-sub-light
-    box-shadow: $shadow-black
-    color: #555
+    color: $color-white-text
+    border: 1px solid $color-white-border
+    box-sizing: border-box
+    box-shadow: $box-shadow-black
   &-header
     background: $color-whiny-grey
     border-bottom: 1px solid $color-whiny-grey-border
@@ -99,6 +100,7 @@ body
     padding: $panel-padding
   &-footer
     background: $color-sub-light
+    border-top: $color-white-border
     padding: $panel-padding/2 $panel-padding
     ul
       @include nomargin
