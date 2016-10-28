@@ -9,12 +9,7 @@ class BuildJob < ApplicationJob
     logger.info "build ##{build_id}: starting"
     build.update!(status: 'building')
 
-    # Boot2docker in macOS cannot use directories in volumes
-    # other than /Users. https://github.com/docker/compose/issues/1039
-    tmp_base_dir = RUBY_PLATFORM.include?("darwin") ? "#{Dir.home}/.cs-build-tmp" : Dir.tmpdir
-    FileUtils.mkdir_p(tmp_base_dir)
-
-    Dir.mktmpdir("cs-build-", tmp_base_dir) do |tmpdir|
+    Dir.mktmpdir("cs-build-") do |tmpdir|
       app_zip = File.join(tmpdir, 'app.zip')
       IO.binwrite(app_zip, build.source_file)
 
@@ -29,8 +24,15 @@ class BuildJob < ApplicationJob
       rescue Zip::Error
         success = false
       else
-        stdout = %x[docker run --rm -v #{tmpdir}:/app -t codestand/baseos 2>&1]
+        container = %x[docker create codestand/baseos].strip
+        %x[docker cp #{tmpdir} #{container}:/app]
+
+        stdout = %x[docker start --attach #{container} 2>&1]
         success = $?.success?
+
+        image = stdout.match('^cp resea/image (.*\.image)$')[1]
+        %x[docker cp #{container}:#{image} #{tmpdir}]
+        %x[docker rm #{container}]
       end
 
       logger.info "build ##{build_id}: #{success ? 'success' : 'failure'}"
