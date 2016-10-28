@@ -1,5 +1,6 @@
 require 'rubygems' # rubyzip uses it
 require 'zip'
+Zip.warn_invalid_date = false
 
 class BuildJob < ApplicationJob
   queue_as :build
