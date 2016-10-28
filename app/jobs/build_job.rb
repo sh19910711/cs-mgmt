@@ -49,9 +49,9 @@ class BuildJob < ApplicationJob
 
       # deploy images
       group_id = SecureRandom.uuid
-      Dir["*.*.image"].each do |file|
+      Dir["#{tmpdir}/*.*.image"].each do |file|
         logger.info "build ##{build_id}: deploying #{file}"
-        DeployService.new.deploy(build.app, group_id, file, File.open(file), build.tag)
+        DeployService.new.deploy(build.app, group_id, file, File.open(file, 'rb'), build.tag)
       end
     end
   end
