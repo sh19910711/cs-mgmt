@@ -30,6 +30,7 @@ class BuildJob < ApplicationJob
         success = false
       else
         stdout = %x[docker run --rm -v #{tmpdir}:/app -t codestand/baseos 2>&1]
+        p stdout
         success = $?.success?
       end
 
