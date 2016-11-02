@@ -21,11 +21,16 @@ rvm:
   - 2.2.5
 
 env:
-  - DB=sqlite
-  - DB=postgresql
-  - DB=mysql
   global:
+    - DB=sqlite
     - BASEOS_IMAGE=codestand/baseos@sha256:d3effd3cea63fdee81a07532087e7081d383f71bf4300d6140eaeccde7d23b9c
+
+matrix:
+  include:
+    - env: DB=postgresql
+    - env: DB=mysql
+  allow_failures:
+    - env: BASEOS_IMAGE=codestand/baseos:latest
 
 cache:
   directories:
