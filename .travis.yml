@@ -24,6 +24,8 @@ env:
   - DB=sqlite
   - DB=postgresql
   - DB=mysql
+  global:
+    - BASEOS_IMAGE=codestand/baseos@sha256:d3effd3cea63fdee81a07532087e7081d383f71bf4300d6140eaeccde7d23b9c
 
 cache:
   directories:
