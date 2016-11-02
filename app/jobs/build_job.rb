@@ -29,7 +29,7 @@ class BuildJob < ApplicationJob
       rescue Zip::Error
         success = false
       else
-        stdout = %x[docker run --rm -v #{tmpdir}:/app -t codestand/baseos 2>&1]
+        stdout = %x[docker run --rm -v #{tmpdir}:/app -t #{ENV['BASEOS_IMAGE'] || 'codestand/baseos'} 2>&1]
         success = $?.success?
       end
 
