@@ -30,6 +30,7 @@ class BuildJob < ApplicationJob
         success = false
       else
         stdout = %x[docker run --rm -v #{tmpdir}:/app -t makestack/deviceos 2>&1]
+        puts stdout
         success = $?.success?
       end
 
