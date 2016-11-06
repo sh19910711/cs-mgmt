@@ -4,6 +4,8 @@ Rails.application.routes.draw do
     '/signin',
     '/signup',
     '/signout',
+    '/apps',
+    '/devices',
   ].each { |page| get page, to: 'pages#page' }
 
   scope :api do
